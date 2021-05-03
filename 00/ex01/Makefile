@@ -1,0 +1,42 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/05/03 11:21:34 by adbenoit          #+#    #+#              #
+#    Updated: 2021/05/03 15:37:22 by adbenoit         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	=	phoneBook
+CC		=	clang++
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
+
+SRC		=	main.cpp		phonebook.cpp
+OBJ		=	$(SRC:.cpp=.o)
+
+all:	$(NAME)
+
+$(NAME): $(OBJ)
+	@$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+	@printf "\n"
+	@echo "Compilation of \033[33;1m$(NAME)\033[0;1m: [\033[1;32mOK\033[0;1m]\033[0m"
+
+%.o:	%.cpp
+	@printf "\033[34;1m|\033[0;m"
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	@rm $(OBJ) 2> /dev/null || true
+	@echo "\033[33;1m$(NAME)\033[0;1m: objects deleted\033[0m"
+
+fclean: clean
+	@rm $(NAME) 2> /dev/null || true
+	@echo "\033[33;1m$(NAME)\033[0;1m: $(NAME) deleted\033[0m"
+
+re: fclean all
+
+.PHONY: all clean fclean re
