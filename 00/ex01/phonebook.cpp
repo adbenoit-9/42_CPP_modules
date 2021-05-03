@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:59:23 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/03 22:59:33 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/03 23:22:40 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ void    Contact::displayContact(int i)
 
 void    Contact::displayCoor(void)
 {
-    std::cout   << "Postal Address: " << postalAddr << std::endl
+    std::cout   << "First name: " << firstName << std::endl
+                << "Last name: " << lastName << std::endl
+                << "Postal Address: " << postalAddr << std::endl
                 << "Email Address: " << emailAddr << std::endl
                 << "Phone Number: " << phoneNum << std::endl;
 }

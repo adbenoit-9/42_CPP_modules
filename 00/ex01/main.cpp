@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:02:48 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/03 23:14:39 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/03 23:23:35 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main()
 		{
 			for (int j = 0 ; j < i ; j++)
 				phonebook[j].displayContact(j);
-			std::cout << "Enter the index :" << std::endl;
+			std::cout << "\nEnter the index :" << std::endl;
 			std::string j;
 			std::getline(std::cin, j);
 			if (j.length() != 1 || j[0] < '0' || j[0] > i + 47)
