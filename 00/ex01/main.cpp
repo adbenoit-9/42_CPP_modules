@@ -6,11 +6,24 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:02:48 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/03 23:23:35 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/04 11:50:09 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+
+void	searchContact(Contact phonebook[8], int i)
+{
+	for (int j = 0 ; j < i ; j++)
+		phonebook[j].displayContact(j);
+	std::cout << "\nEnter the index :" << std::endl;
+	std::string j;
+	std::getline(std::cin, j);
+	if (j.length() != 1 || j[0] < '0' || j[0] > i + 47)
+		std::cout << "\033[31mContact number " << j << " not found.\033[0m" << std::endl;
+	else
+		phonebook[j[0] - 48].displayCoor();
+}
 
 int main()
 {
@@ -33,17 +46,7 @@ int main()
 			++i;
 		}
 		else if (input.compare("SEARCH") == 0)
-		{
-			for (int j = 0 ; j < i ; j++)
-				phonebook[j].displayContact(j);
-			std::cout << "\nEnter the index :" << std::endl;
-			std::string j;
-			std::getline(std::cin, j);
-			if (j.length() != 1 || j[0] < '0' || j[0] > i + 47)
-				std::cout << "\033[31mContact number " << j << " not found.\033[0m" << std::endl;
-			else
-				phonebook[j[0] - 48].displayCoor();
-		}
+			searchContact(phonebook, i);
 		else if (input.compare("EXIT") == 0)
 			return (0);
 		else if (input.compare("") == 1)
