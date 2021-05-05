@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:12:08 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/04 15:24:21 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/05 12:34:27 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main()
     Zombie      *zombie;
     ZombieEvent event;
     
+	srand(time(NULL));
     std::cout << "Random zombies :" << std::endl;
     event.setZombieType();
     event.randomChump();

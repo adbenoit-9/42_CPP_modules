@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/04 14:33:28 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/05 12:34:05 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/04 14:13:28 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/05/04 15:18:16 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-void    ZombieEvent::setZombieType(void)
+# include <iostream>
+# include <string>
+
+class   Zombie
 {
-    type = "basic Zombie";
-}
+    private:
+        std::string name;
+        std::string type;
+    
+    public:
+        Zombie();
+        Zombie(std::string n, std::string t);
+        void    announce(void);
+        
+};
 
-Zombie* ZombieEvent::newZombie(std::string name)
-{
-    Zombie* zombie = new Zombie(name, type);
-
-    return (zombie);
-}
-
-void    ZombieEvent::randomChump(void)
-{
-    std::string names[5] = {"Boris", "Odile", "JC", "Manon", "George"};
-	Zombie zombie = Zombie(names[rand() % 5], type);
-    zombie.announce();
-}
+#endif
