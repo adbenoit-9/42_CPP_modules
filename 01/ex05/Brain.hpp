@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 12:44:07 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/05 14:07:19 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/05 23:36:28 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/05/06 00:54:21 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main()
+# include <iostream>
+# include <string>
+# include <sstream>
+
+class Brain
 {
-    std::string str = "HI THIS IS BRAIN";
-    std::string &ref = str;
+    private:
+        int			qi;
+        std::string	memories;
 
-    std::cout << str << std::endl;
-    std::cout << ref << std::endl;
-}
+    public:
+        Brain();
+        std::string	identify(void) const;
+};
+
+#endif

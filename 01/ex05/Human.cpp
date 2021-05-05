@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 12:44:07 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/05 14:07:19 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/06 00:42:13 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/05/06 00:54:03 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Human.hpp"
 
-int main()
+Brain	    Human::getBrain(void) const
 {
-    std::string str = "HI THIS IS BRAIN";
-    std::string &ref = str;
+    return (brain);
+}
 
-    std::cout << str << std::endl;
-    std::cout << ref << std::endl;
+
+std::string	Human::identify(void) const
+{
+    std::string ptr;
+
+    ptr = brain.identify();
+    return (ptr);
 }

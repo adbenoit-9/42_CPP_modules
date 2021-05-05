@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 12:44:07 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/05 14:07:19 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/06 00:38:35 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/05/06 00:52:44 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-int main()
+# include "Brain.hpp"
+
+class   Human
 {
-    std::string str = "HI THIS IS BRAIN";
-    std::string &ref = str;
+    private:
+        const Brain brain;
+    
+    public:
+        std::string	identify(void) const;
+        Brain	    getBrain(void) const;
+};
 
-    std::cout << str << std::endl;
-    std::cout << ref << std::endl;
-}
+#endif
