@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 11:21:08 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 14:01:22 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/06 14:05:25 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ std::string	getBuffer(const std::ifstream& ifs)
 int 		main(int ac, char **av)
 {
 	if (ac != 4)
+		return (errorMessage("Arguments error."));
+	if (!av[1][0] || !av[2][0] || !av[3][0])
 		return (errorMessage("Arguments error."));
     std::ifstream	ifs(av[1]);
 	if (!ifs)
