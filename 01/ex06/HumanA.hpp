@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 01:04:18 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 01:27:09 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/06 02:02:58 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 class	HumanA
 {
 	private:
-		Weapon		weapon;
-		std::string	name:
+		Weapon&		weapon;
+		std::string	name;
 	
 	public:
-		HumanA(std::string n, Weapon w);
-		void	attack(void);
+		HumanA(std::string n, Weapon& w);
+		void	attack(void) const;
 };
 
 #endif

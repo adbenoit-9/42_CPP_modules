@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 01:11:29 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 01:20:15 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/06 02:06:37 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ HumanB::HumanB(std::string n)
     name = n;
 }
 
-void    HumanB::setWeapon(void)
+void    HumanB::setWeapon(Weapon& w)
 {
-    
+    weapon = &w;
 }
 
-void    HumanB::attack(void)
+void    HumanB::attack(void) const
 {
-    std::cout << name << " attacks with his " << weapon.getType() << std::endl;
+    std::cout << name << " attacks with his " << weapon->getType() << std::endl;
 }
