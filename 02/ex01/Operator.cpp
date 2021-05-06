@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Operator.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 16:23:49 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 00:40:43 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/07 00:38:47 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/05/07 00:39:21 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Fixed.hpp"
 
-# include <iostream>
-
-class	Fixed
+Fixed&	Fixed::operator = (const Fixed& nb) throw()
 {
-	private:
-		int					value;
-		const static int	fractionalBits = 8;
+    std::cout << "Assignation operator called" << std::endl;
+    if (this == &nb)
+        return (*this);
+    value = nb.value;
+    return (*this);
+}
 
-	public:
-		Fixed();
-		Fixed(const Fixed& nb);
-		~Fixed();
-		Fixed&	operator = (const Fixed& nb) throw();
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-};
-
-#endif
+std::ostream&	operator << (std::ostream& os, const Fixed& nb) throw()
+{
+    os << nb.toFloat();
+    return (os);
+}
