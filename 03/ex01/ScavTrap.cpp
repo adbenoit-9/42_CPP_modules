@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 17:36:31 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 18:17:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 ScavTrap::ScavTrap(std::string name)
 {
-	std::cout	<< "\033[1;33m" << name << ": Hodor Hodor !"
-				<< "\033[0m\n" << std::endl;
+	std::cout	<< "\033[1;34m" << name << ": Hodor Hodor !"
+				<< "\033[0m" << std::endl;
 	_hitPoints = 100;
 	_maxHitPoints = 100;
 	_energyPoints = 50;
@@ -30,9 +30,9 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::~ScavTrap(void)
 {
 	if (_hitPoints != 0)
-		std::cout	<< "\n\033[33;1m" << _name << ": I'm taking a break, I want a Kitkat !\033[0m" << std::endl;
+		std::cout	<< "\033[34;1m" << _name << ": I'm taking a break, I want a Kitkat !\033[0m" << std::endl;
 	else
-		std::cout	<< "\n\033[33;1m" << _name << " : Hodor..."
+		std::cout	<< "\033[34;1m" << _name << " : Hodor..."
 					<< "\033[0m" << std::endl;
 }
 
@@ -40,19 +40,18 @@ void	ScavTrap::rangedAttack(std::string const & target)
 {
 	if (_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[33m" << _name << ": Let my door alone !" << std::endl
-				<< "\033[34m" << target << " -" << _meleeAttackDamage
-				<< " damages" << std::endl
-				<< target << ": No way, I want your door !\033[0m" << std::endl;
+	std::cout	<< "\033[34m" << _name << ": Let my door alone... Hiyah !" << std::endl
+				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
 void	ScavTrap::meleeAttack(std::string const & target)
 {
 	if (_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[33m" << _name << ": I saw you stupid idiot !" << std::endl
-				<< "\033[34m" << target << " -" << _rangedAttackDamage
-				<< " damages\033[0m" << std::endl;
+	std::cout	<< "\033[34m" << _name << ": I saw you stupid idiot !" << std::endl
+				<< "\033[2;2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
@@ -63,12 +62,12 @@ void	ScavTrap::takeDamage(unsigned int amount)
 	if (_hitPoints < amount)
 		amount = _hitPoints;
 	_hitPoints -= amount;
-	std::cout	<< "\033[35m" << _name << " -" << amount
+	std::cout	<< "\033[2;3;35m" << _name << " -" << amount
 				<< " damages\033[0m" << std::endl;
 	if (_hitPoints == 0)
 		std::cout	<< "\033[31m" << _name << " x_x\033[0m" << std::endl;
 	else
-		std::cout	<< "\033[33m" << _name << ": Ridiculous, I don't even feel it !\033[0m" << std::endl;
+		std::cout	<< "\033[34m" << _name << ": Ridiculous, I don't even feel it !\033[0m" << std::endl;
 }
 
 void	ScavTrap::beRepaired(unsigned int amount)
@@ -80,21 +79,21 @@ void	ScavTrap::beRepaired(unsigned int amount)
 		repairEnergy = _maxEnergyPoints - _energyPoints;
 	if (_maxHitPoints - _hitPoints < amount)
 		repairHit = _maxHitPoints - _hitPoints;
-	std::cout  << "\033[32m" << _name << " +" << repairEnergy << " energy points" << std::endl;
-	std::cout << "\033[32m" << _name << " +" << repairHit << " hit points" << std::endl;
+	std::cout  << "\033[2;3;32m" << _name << " +" << repairEnergy << " energy points" << std::endl;
+	std::cout << "\033[2;3;32m" << _name << " +" << repairHit << " hit points" << std::endl;
 	_energyPoints += repairEnergy;
 	_hitPoints += repairHit;
-	std::cout	<< "\033[33m" << _name << ": YOUHOO another shot please !\033[0m" << std::endl;
+	std::cout	<< "\033[0;34m" << _name << ": YOUHOO another shot please !\033[0m" << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer(std::string const & target)
 {
-	std::string	challenge[5] = {"Bring me a Kitkat.", "Ate your feet.",\
-							"Marry me.", "Paint my door in pink.", \
-							""};
+	std::string	challenge[5] = {"bring me a Kitkat.", "ate your feet.",\
+							"marry me.", "paint my door in pink.", \
+							"singing \"I kissed a girl\" naked"};
 	if (_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[33m" << _name << ": " << challenge[rand() % 5] << std::endl
-				<< "\033[34m" << target << ": Oh nooooon, not that please... Have pity on me !"
-				<< "\033[0m" << std::endl;
+	std::cout	<< "\033[34m" << _name << ": Your challenge is to " << challenge[rand() % 5] << std::endl
+				<< "\033[34m" << _name << ": " << "No pity for you " << target
+				<< " !\033[0m" << std::endl;
 }

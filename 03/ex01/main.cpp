@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 15:20:06 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 16:53:22 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 18:17:09 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,22 @@ int main()
 {
     srand(time(NULL));
     {
-        std::cout << "Basic :" << std::endl;
+        FragTrap John("John");
         ScavTrap Hodor("Hodor");
-        Hodor.meleeAttack("Suzanne");
-        Hodor.rangedAttack("Suzanne");
+        Hodor.meleeAttack("John");
+        John.takeDamage(15);
+        John.meleeAttack("Hodor");
+        Hodor.takeDamage(20);
+        Hodor.rangedAttack("John");
+        John.takeDamage(15);
+        John.rangedAttack("Hodor");
         Hodor.takeDamage(20);
         Hodor.beRepaired(20);
-        Hodor.challengeNewcomer("Suzanne");
-    }
-    
-    {
-        std::cout << "\nDead :" << std::endl;
-        ScavTrap Hodor("Hodor");
-        Hodor.meleeAttack("Suzanne");
-        Hodor.rangedAttack("Suzanne");
+        Hodor.challengeNewcomer("John");
+        John.meleeAttack("Hodor");
         Hodor.takeDamage(20);
-        Hodor.rangedAttack("Paul");
-        Hodor.takeDamage(40);
-        Hodor.rangedAttack("Anna");
-        Hodor.takeDamage(40);
-        Hodor.beRepaired(20);
-        Hodor.takeDamage(40);
-    }
-
-    {
-        std::cout << "\nEnergy :" << std::endl;
-        ScavTrap Hodor("Hodor");
-        Hodor.challengeNewcomer("Suzanne");
-        Hodor.challengeNewcomer("Paul");
-        Hodor.challengeNewcomer("Anna");
-        Hodor.challengeNewcomer("Bob");
-        Hodor.challengeNewcomer("Bob");
-        Hodor.beRepaired(25);
-        Hodor.challengeNewcomer("Jeanne");
-
+        John.vaulthunter_dot_exe("Hordor");
+        Hodor.takeDamage(75);
     }
     
 }
