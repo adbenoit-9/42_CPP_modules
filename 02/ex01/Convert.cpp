@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.cpp                                        :+:      :+:    :+:   */
+/*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 17:02:35 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 23:46:55 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 13:11:00 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 float Fixed::toFloat(void) const
 {
-    return ((double)value / (double)(1 << fractionalBits));
+    return ((float)_value / (float)(1 << _fractionalBits));
 }
 
 int Fixed::toInt(void) const
 {
-    return (value >> fractionalBits);
+    return (_value >> _fractionalBits);
 }

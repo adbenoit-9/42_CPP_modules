@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 00:38:47 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 00:39:21 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 13:10:27 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Fixed&	Fixed::operator = (const Fixed& nb) throw()
     std::cout << "Assignation operator called" << std::endl;
     if (this == &nb)
         return (*this);
-    value = nb.value;
+    _value = nb._value;
     return (*this);
 }
 

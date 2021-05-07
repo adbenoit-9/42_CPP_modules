@@ -6,34 +6,34 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:30:43 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 00:39:57 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 13:10:18 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed(void)
 {
     std::cout << "Default constructor called" << std::endl;
-    value = 0;
+    _value = 0;
 }
 
 Fixed::Fixed(const int nb)
 {
     std::cout << "Int constructor called" << std::endl;
-    value = nb << fractionalBits;
+    _value = nb << _fractionalBits;
 }
 
 Fixed::Fixed(const float nb)
 {
     std::cout << "Float constructor called" << std::endl;
-    value = roundf(nb * (1 << fractionalBits));
+    _value = roundf(nb * (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed& nb)
 {
     std::cout << "Copy constructor called" << std::endl;
-    value = nb.value;
+    _value = nb._value;
 }
 
 Fixed::~Fixed()
@@ -45,11 +45,11 @@ Fixed::~Fixed()
 int	    Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;
-    return (value);
+    return (_value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
-    value = raw;
+    _value = raw;
 }
