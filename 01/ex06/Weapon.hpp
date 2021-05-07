@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 00:58:36 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 02:11:50 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:50:19 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class	Weapon
 {
 	private:
-		std::string	type;
+		std::string	_type;
 
 	public:
 		Weapon(void);
-		Weapon(std::string t);
+		Weapon(std::string type);
 		const std::string&	getType(void) const;
-		void				setType(std::string t);
+		void				setType(std::string type);
 };
 
 #endif

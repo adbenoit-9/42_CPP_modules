@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 11:21:08 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 14:05:25 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 13:05:42 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ int 		main(int ac, char **av)
 	std::string		buffer = getBuffer(ifs);
 	ifs.close();
 	replace(av[2], av[3], buffer);
-	std::ofstream	ofs("FILENAME.replace");
+	std::string	outputFile;
+	outputFile = av[1];
+	outputFile += ".replace";
+	std::ofstream	ofs(outputFile);
 	if (!ofs)
 		return (errorMessage("Open output file error."));
 	ofs << buffer;

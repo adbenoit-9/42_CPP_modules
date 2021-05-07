@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 15:27:48 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/05 11:16:33 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:58:56 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ ZombieHorde::ZombieHorde(int n)
 {
     std::string names[7] = {"Boris", "Odile", "JC", "Manon", "George", "Louise", "Damien"};
 
-    horde = new Zombie [n];
-    nbZombie = n;
+    _horde = new Zombie [n];
+    _nbZombie = n;
     for (int i = 0 ; i < n ; i++)
-        horde[i] = Zombie(names[rand() % 7], "basic zombie");
+        _horde[i] = Zombie(names[rand() % 7], "basic zombie");
 }
 
-ZombieHorde::~ZombieHorde()
+ZombieHorde::~ZombieHorde(void)
 {
-    delete[] horde;
+    delete[] _horde;
 }
 
 void    ZombieHorde::announce(void)
 {
-    for (int i = 0 ; i < nbZombie ; i++)
-        horde[i].announce();
+    for (int i = 0 ; i < _nbZombie ; i++)
+        _horde[i].announce();
 }

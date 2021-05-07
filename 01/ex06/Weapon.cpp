@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 01:02:06 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 02:11:21 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:50:05 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ Weapon::Weapon(void)
 {
 }
 
-Weapon::Weapon(std::string t)
+Weapon::Weapon(std::string type)
 {
-    type = t;
+    _type = type;
 }
 
 const std::string&	Weapon::getType(void) const
 {
-    return (type);
+    return (_type);
 }
 
-void				Weapon::setType(std::string t)
+void				Weapon::setType(std::string type)
 {
-    type = t;
+    _type = type;
 }

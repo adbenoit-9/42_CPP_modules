@@ -6,19 +6,19 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 12:18:07 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/04 12:57:32 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:39:13 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
-Pony::Pony()
+Pony::Pony(void)
 {
-    age = 0;
+    _age = 0;
     std::cout << "Pony created." << std::endl;
 }
 
-Pony::~Pony()
+Pony::~Pony(void)
 {
     std::cout << "Pony detroyed." << std::endl;
 }

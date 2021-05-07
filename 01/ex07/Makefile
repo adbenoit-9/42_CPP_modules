@@ -6,7 +6,7 @@
 #    By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/03 11:21:34 by adbenoit          #+#    #+#              #
-#    Updated: 2021/05/06 14:10:07 by adbenoit         ###   ########.fr        #
+#    Updated: 2021/05/07 13:06:21 by adbenoit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ clean:
 
 fclean: clean
 	@rm $(NAME) 2> /dev/null || true
-	@rm FILENAME.replace 2> /dev/null || true
+	@rm tests/*.replace 2> /dev/null || true
 	@echo "\033[33;1m$(NAME)\033[0;1m: $(NAME) deleted\033[0m"
 	@echo "\033[33;1m$(NAME)\033[0;1m: FILENAME.replace deleted\033[0m"
 

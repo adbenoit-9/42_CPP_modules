@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 01:13:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 02:06:14 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:49:29 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 class   HumanB
 {
 	private:
-		Weapon*		weapon;
-		std::string	name;
+		Weapon*		_weapon;
+		std::string	_name;
 	
 	public:
-        HumanB(std::string n);
+        HumanB(std::string name);
 		void	attack(void) const;
         void    setWeapon(Weapon& w);
 };

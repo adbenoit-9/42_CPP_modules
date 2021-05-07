@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 00:42:13 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 00:54:03 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:46:42 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Brain	    Human::getBrain(void) const
 {
-    return (brain);
+    return (_brain);
 }
 
 
@@ -22,6 +22,6 @@ std::string	Human::identify(void) const
 {
     std::string ptr;
 
-    ptr = brain.identify();
+    ptr = _brain.identify();
     return (ptr);
 }

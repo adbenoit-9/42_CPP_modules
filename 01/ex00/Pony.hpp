@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 12:10:14 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/04 12:53:50 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:38:24 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 class   Pony
 {
     private:
-        std::string name;
-        std::string heigh;
-        std::string color;
-        std::string sex;
-        int         age;
+        std::string _name;
+        std::string _heigh;
+        std::string _color;
+        std::string _sex;
+        int         _age;
 
     public:
-        Pony();
-        ~Pony();
+        Pony(void);
+        ~Pony(void);
 };
 
 void    ponyOnTheStack(void);

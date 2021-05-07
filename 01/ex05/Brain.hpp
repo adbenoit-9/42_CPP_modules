@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 23:36:28 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/06 00:54:21 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:45:44 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 class Brain
 {
     private:
-        int			qi;
-        std::string	memories;
+        int			_qi;
+        std::string	_memories;
 
     public:
-        Brain();
+        Brain(void);
         std::string	identify(void) const;
 };
 
