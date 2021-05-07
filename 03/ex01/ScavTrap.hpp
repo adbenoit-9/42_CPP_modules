@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 17:14:44 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 17:14:56 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef ScavTrap_HPP
+# define ScavTrap_HPP
 
 # include <iostream>
 # include <string>
 
-class	FragTrap
+class	ScavTrap
 {
 	private:
 		unsigned int	_hitPoints;
@@ -30,13 +30,13 @@ class	FragTrap
 		unsigned int	_armorDamageReduction;
 
 	public:
-		FragTrap(std::string name);
-		~FragTrap(void);
+		ScavTrap(std::string name);
+		~ScavTrap(void);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		void	vaulthunter_dot_exe(std::string const & target);
+		void	challengeNewcomer(std::string const & target);
 };
 
 #endif
