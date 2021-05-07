@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 16:22:42 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 16:26:26 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 FragTrap::FragTrap(std::string name)
 {
-	std::cout << "\033[1;33m" << name << ": Let's get this party started !\033[0m\n" << std::endl;
+	std::cout	<< "\033[1;33m" << name << ": Let's get this party started !"
+				<< "\033[0m\n" << std::endl;
 	_hitPoints = 100;
 	_maxHitPoints = 100;
 	_energyPoints = 100;
@@ -29,9 +30,11 @@ FragTrap::FragTrap(std::string name)
 FragTrap::~FragTrap(void)
 {
 	if (_hitPoints != 0)
-		std::cout << "\n\033[33;1m" << _name << ": It's really quiet... and lonely... It's boring. Bye !\033[0m" << std::endl;
+		std::cout	<< "\n\033[33;1m" << _name << ": It's really quiet... "
+					<< "and lonely... It's boring. Bye !\033[0m" << std::endl;
 	else
-		std::cout << "\n\033[33;1m" << _name << " : OMG I'M DEAD !\033[0m" << std::endl;
+		std::cout	<< "\n\033[33;1m" << _name << " : OMG I'M DEAD !"
+					<< "\033[0m" << std::endl;
 }
 
 void	FragTrap::rangedAttack(std::string const & target)
@@ -79,7 +82,8 @@ void	FragTrap::beRepaired(unsigned int amount)
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
 	std::string	attack[5] = {"It's about to get magical !", "Hey everybody, check out my package !",\
-							"This time it'll be awesome, I promise !", "I have an IDEA !", "It's like a box of chocolates..."};
+							"This time it'll be awesome, I promise !", "I have an IDEA !", \
+							"It's like a box of chocolates..."};
 	if (_energyPoints >= 25)
 	{
 		_energyPoints -= 25;
