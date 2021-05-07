@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:20:17 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/03 21:31:56 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:37:30 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class   Contact
         std::string darkestSecret;
 
     public:
-        // Contact();
         void    addContact(void);
         void    searchContact(int i);
         void    displayContact(int i);
