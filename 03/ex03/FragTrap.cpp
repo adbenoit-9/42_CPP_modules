@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 16:22:16 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 19:52:11 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (_energyPoints >= 25)
 	{
 		_energyPoints -= 25;
-		std::cout	<< "\033[3;38m* " << _name << attack[rand() % 4] << target
+		std::cout	<< "\033[3;" << _color << "* " << _name << attack[rand() % 4] << target
 					<< "'s" << part[rand() % 5] << " *" << std::endl
-					<< "\033[2;3;35m" << _name << " -25 energy points\033[0m" << std::endl;
+					<< "\033[2;3;31m" << _name << " -25 energy points\033[0m" << std::endl;
 	}
 	else
 		std::cout	<< "\033[" << _color << _name << ": I Need more energy..." << std::endl;

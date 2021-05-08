@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 19:33:00 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 19:56:13 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(unsigned int hit, unsigned int maxHit, unsigned int energy,
 					unsigned int meleeDam, unsigned int rangedDam,
 					unsigned int armorReduc, std::string color)
 {
-	std::cout << "ClapTrap contructor called. (" << name << ")" << std::endl;
+	std::cout << "\033[40mClapTrap contructor called. (" << name << ")\033[0m" << std::endl;
 	_hitPoints = hit;
 	_maxHitPoints = maxHit;
 	_energyPoints = energy;
@@ -47,7 +47,7 @@ ClapTrap::ClapTrap(const ClapTrap& toCopy)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap destructor called. (" << _name << ")" << std::endl;
+	std::cout << "\033[40mClapTrap destructor called. (" << _name << ")\033[0m" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator = (const ClapTrap& toCopy) throw()

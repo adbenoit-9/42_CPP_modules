@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 17:31:50 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 19:33:00 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ClapTrap::rangedAttack(std::string const & target)
 	if (_hitPoints == 0)
 		return ;
 	std::cout	<< "\033[" << _color << _name << ": In yo'FACE !" << std::endl
-				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< "\033[2;3;31m" << _name << " caused " << _rangedAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
@@ -81,7 +81,7 @@ void	ClapTrap::meleeAttack(std::string const & target)
 	if (_hitPoints == 0)
 		return ;
 	std::cout	<< "\033[" << _color << _name << ": Take that !" << std::endl
-				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< "\033[2;3;31m" << _name << " caused " << _meleeAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
@@ -97,7 +97,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		std::cout	<< "\033[31m" << _name << " x_x\033[0m" << std::endl;
 	else
 		std::cout	<< "\033[" << _color << _name << ": Ouch !\033[0m" << std::endl;
-	std::cout	<< "\033[2;3;35m" << _name << " -" << amount
+	std::cout	<< "\033[2;3;31m" << _name << " -" << amount
 				<< " damages\033[0m" << std::endl;
 }
 

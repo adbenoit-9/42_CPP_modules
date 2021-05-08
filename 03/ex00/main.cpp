@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 15:20:06 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 20:20:30 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 20:10:58 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ int main()
         John.vaulthunter_dot_exe("Bob");
         John.beRepaired(25);
         John.vaulthunter_dot_exe("Jeanne");
+        John.beRepaired(100);
+        John.takeDamage(30);
+        John.beRepaired(100);
 
     }
     

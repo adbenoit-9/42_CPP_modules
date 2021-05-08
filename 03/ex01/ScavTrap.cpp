@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 17:41:34 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 19:11:52 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ScavTrap::rangedAttack(std::string const & target)
 	if (_hitPoints == 0)
 		return ;
 	std::cout	<< "\033[34m" << _name << ": Let my door alone... Hiyah !" << std::endl
-				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< "\033[2;3;31m" << _name << " caused " << _rangedAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
@@ -80,7 +80,7 @@ void	ScavTrap::meleeAttack(std::string const & target)
 	if (_hitPoints == 0)
 		return ;
 	std::cout	<< "\033[34m" << _name << ": I saw you stupid idiot !" << std::endl
-				<< "\033[2;2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< "\033[2;2;3;31m" << _name << " caused " << _rangedAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
@@ -96,7 +96,7 @@ void	ScavTrap::takeDamage(unsigned int amount)
 		std::cout	<< "\033[31m" << _name << " x_x\033[0m" << std::endl;
 	else
 		std::cout	<< "\033[34m" << _name << ": Ridiculous, I don't even feel it !\033[0m" << std::endl;
-	std::cout	<< "\033[2;3;35m" << _name << " -" << amount
+	std::cout	<< "\033[2;3;31m" << _name << " -" << amount
 				<< " damages\033[0m" << std::endl;
 }
 

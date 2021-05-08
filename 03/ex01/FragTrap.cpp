@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 17:41:47 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 20:05:41 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	FragTrap::rangedAttack(std::string const & target)
 	if (_hitPoints == 0)
 		return ;
 	std::cout	<< "\033[33m" << _name << ": In yo'FACE !" << std::endl
-				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< "\033[2;3;31m" << _name << " caused " << _rangedAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
@@ -80,7 +80,7 @@ void	FragTrap::meleeAttack(std::string const & target)
 	if (_hitPoints == 0)
 		return ;
 	std::cout	<< "\033[33m" << _name << ": Take that !" << std::endl
-				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< "\033[2;3;31m" << _name << " caused " << _rangedAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
@@ -96,7 +96,7 @@ void	FragTrap::takeDamage(unsigned int amount)
 		std::cout	<< "\033[31m" << _name << " x_x\033[0m" << std::endl;
 	else
 		std::cout	<< "\033[33m" << _name << ": Ouch !\033[0m" << std::endl;
-	std::cout	<< "\033[2;3;35m" << _name << " -" << amount
+	std::cout	<< "\033[2;3;31m" << _name << " -" << amount
 				<< " damages\033[0m" << std::endl;
 }
 
@@ -127,9 +127,9 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (_energyPoints >= 25)
 	{
 		_energyPoints -= 25;
-		std::cout	<< "\033[3;38m* " << _name << attack[rand() % 4] << target
+		std::cout	<< "\033[3;33m* " << _name << attack[rand() % 4] << target
 					<< "'s" << part[rand() % 5] << " *" << std::endl
-					<< "\033[2;3;35m" << _name << " -25 energy points\033[0m" << std::endl;
+					<< "\033[2;3;31m" << _name << " -25 energy points\033[0m" << std::endl;
 	}
 	else
 		std::cout	<< "\033[33m" << _name << ": I Need more energy..." << std::endl;

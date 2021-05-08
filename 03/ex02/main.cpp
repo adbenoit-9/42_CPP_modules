@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 15:20:06 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 17:31:16 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 20:04:38 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,18 @@ int main()
         John.rangedAttack("Hodor");
         Hodor.takeDamage(20);
         Hodor.meleeAttack("John");
-        John.takeDamage(15);
+        John.takeDamage(20);
         John.meleeAttack("Hodor");
-        Hodor.takeDamage(20);
+        Hodor.takeDamage(30);
         Hodor.beRepaired(20);
         Hodor.challengeNewcomer("John");
         Hodor.meleeAttack("John");
-        John.takeDamage(15);
+        John.takeDamage(20);
         John.meleeAttack("Hodor");
-        Hodor.takeDamage(20);
+        Hodor.takeDamage(30);
         John.vaulthunter_dot_exe("Hordor");
         Hodor.takeDamage(40);
         John.vaulthunter_dot_exe("Hordor");
         Hodor.takeDamage(40);
     }
-    
 }
