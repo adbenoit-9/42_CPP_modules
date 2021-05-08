@@ -1,43 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 20:19:18 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 02:13:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
-FragTrap::FragTrap(std::string name)
+ClapTrap::ClapTrap(unsigned int hit, unsigned int maxHit, unsigned int energy,
+					unsigned int maxEnergy, unsigned int level, std::string name,
+					unsigned int meleeDam, unsigned int rangedDam, unsigned int armorReduc)
 {
-	std::cout	<< "\033[1;33m" << name << ": Let's get this party started !"
-				<< "\033[0m" << std::endl;
-	_hitPoints = 100;
-	_maxHitPoints = 100;
-	_energyPoints = 100;
-	_maxEnergyPoints = 100;
-	_level = 1;
+	std::cout << "Claptrap contructor called. (" << name << ")" << std::endl;
+	_hitPoints = hit;
+	_maxHitPoints = maxHit;
+	_energyPoints = energy;
+	_maxEnergyPoints = maxEnergy;
+	_level = level;
 	_name = name;
-	_meleeAttackDamage = 30;
-	_rangedAttackDamage = 20;
-	_armorDamageReduction = 5;
+	_meleeAttackDamage = meleeDam;
+	_rangedAttackDamage = rangedDam;
+	_armorDamageReduction = armorReduc;
 }
 
-FragTrap::~FragTrap(void)
+ClapTrap::~ClapTrap(void)
 {
-	if (_hitPoints != 0)
-		std::cout	<< "\033[33;1m" << _name << ": It's really quiet... "
-					<< "and lonely... It's boring. Bye !\033[0m" << std::endl;
-	else
-		std::cout	<< "\033[33;1m" << _name << " : OMG I'M DEAD !"
-					<< "\033[0m" << std::endl;
+	std::cout << "Claptrap destructor called. (" << _name << ")" << std::endl;
 }
 
-void	FragTrap::rangedAttack(std::string const & target)
+void	ClapTrap::rangedAttack(std::string const & target)
+{
+	if (_hitPoints == 0)
+		return ;
+	std::cout	<< "\033[33m" << _name << ": Take that !" << std::endl
+				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
+				<< " damages to" << target << "\033[0m" << std::endl;
+}
+
+void	ClapTrap::meleeAttack(std::string const & target)
 {
 	if (_hitPoints == 0)
 		return ;
@@ -46,16 +51,7 @@ void	FragTrap::rangedAttack(std::string const & target)
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
-void	FragTrap::meleeAttack(std::string const & target)
-{
-	if (_hitPoints == 0)
-		return ;
-	std::cout	<< "\033[33m" << _name << ": Take that !" << std::endl
-				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
-				<< " damages to " << target << "\033[0m" << std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hitPoints == 0)
 		return ;
@@ -71,7 +67,7 @@ void	FragTrap::takeDamage(unsigned int amount)
 				<< " damages\033[0m" << std::endl;
 }
 
-void	FragTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	unsigned int repairEnergy = amount;
 	unsigned int repairHit = amount;
@@ -85,23 +81,4 @@ void	FragTrap::beRepaired(unsigned int amount)
 	_energyPoints += repairEnergy;
 	_hitPoints += repairHit;
 	std::cout	<< "\033[0;33m" << _name << ": Make my day. :D \033[0m" << std::endl;
-}
-
-void	FragTrap::vaulthunter_dot_exe(std::string const & target)
-{
-	std::string	attack[4] = {" kicked ", " punched ",\
-							" hit with a rock ", " head shot "};
-	std::string	part[5] = {" face", " boobs", " balls", " stomach", " ass"};
-	
-	if (_hitPoints == 0)
-		return ;
-	if (_energyPoints >= 25)
-	{
-		_energyPoints -= 25;
-		std::cout	<< "\033[3;38m* " << _name << attack[rand() % 4] << target
-					<< "'s" << part[rand() % 5] << " *" << std::endl
-					<< "\033[2;3;35m" << _name << " -25 energy points\033[0m" << std::endl;
-	}
-	else
-		std::cout	<< "\033[33m" << _name << ": I Need more energy..." << std::endl;
 }

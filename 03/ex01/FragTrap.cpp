@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 18:17:56 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 20:19:18 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ void	FragTrap::rangedAttack(std::string const & target)
 {
 	if (_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[33m" << _name << ": Take that !" << std::endl
+	std::cout	<< "\033[33m" << _name << ": In yo'FACE !" << std::endl
 				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
-				<< " damages to" << target << "\033[0m" << std::endl;
+				<< " damages to " << target << "\033[0m" << std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const & target)
 {
 	if (_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[33m" << _name << ": In yo'FACE !" << std::endl
+	std::cout	<< "\033[33m" << _name << ": Take that !" << std::endl
 				<< "\033[2;3;35m" << _name << " caused " << _rangedAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
@@ -63,12 +63,12 @@ void	FragTrap::takeDamage(unsigned int amount)
 	if (_hitPoints < amount)
 		amount = _hitPoints;
 	_hitPoints -= amount;
-	std::cout	<< "\033[2;3;35m" << _name << " -" << amount
-				<< " damages\033[0m" << std::endl;
 	if (_hitPoints == 0)
 		std::cout	<< "\033[31m" << _name << " x_x\033[0m" << std::endl;
 	else
 		std::cout	<< "\033[33m" << _name << ": Ouch !\033[0m" << std::endl;
+	std::cout	<< "\033[2;3;35m" << _name << " -" << amount
+				<< " damages\033[0m" << std::endl;
 }
 
 void	FragTrap::beRepaired(unsigned int amount)
@@ -89,19 +89,18 @@ void	FragTrap::beRepaired(unsigned int amount)
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
-	std::string	attack[5] = {"It's about to get magical !", "Hey everybody, check out my package !",\
-							"This time it'll be awesome, I promise !", "I have an IDEA !", \
-						"It's like a box of chocolates..."};
+	std::string	attack[4] = {" kicked ", " punched ",\
+							" hit with a rock ", " head shot "};
+	std::string	part[5] = {" face", " boobs", " balls", " stomach", " ass"};
 	
 	if (_hitPoints == 0)
 		return ;
 	if (_energyPoints >= 25)
 	{
 		_energyPoints -= 25;
-		std::cout	<< "\033[33m" << _name << ": " << attack[rand() % 5] << std::endl
-					<< "\033[2;3;35m" << _name << " -25 energy points" << std::endl
-					<< "\033[0;33m" << _name << ": Extra ouch ! Sorry " << target
-					<< " :D\033[0m" << std::endl;
+		std::cout	<< "\033[3;38m* " << _name << attack[rand() % 4] << target
+					<< "'s" << part[rand() % 5] << " *" << std::endl
+					<< "\033[2;3;35m" << _name << " -25 energy points\033[0m" << std::endl;
 	}
 	else
 		std::cout	<< "\033[33m" << _name << ": I Need more energy..." << std::endl;

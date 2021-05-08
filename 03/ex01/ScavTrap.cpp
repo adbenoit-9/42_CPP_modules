@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 18:17:53 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 00:19:37 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void	ScavTrap::takeDamage(unsigned int amount)
 	if (_hitPoints < amount)
 		amount = _hitPoints;
 	_hitPoints -= amount;
-	std::cout	<< "\033[2;3;35m" << _name << " -" << amount
-				<< " damages\033[0m" << std::endl;
 	if (_hitPoints == 0)
 		std::cout	<< "\033[31m" << _name << " x_x\033[0m" << std::endl;
 	else
 		std::cout	<< "\033[34m" << _name << ": Ridiculous, I don't even feel it !\033[0m" << std::endl;
+	std::cout	<< "\033[2;3;35m" << _name << " -" << amount
+				<< " damages\033[0m" << std::endl;
 }
 
 void	ScavTrap::beRepaired(unsigned int amount)
@@ -90,7 +90,7 @@ void	ScavTrap::challengeNewcomer(std::string const & target)
 {
 	std::string	challenge[5] = {"bring me a Kitkat.", "ate your feet.",\
 							"marry me.", "paint my door in pink.", \
-							"singing \"I kissed a girl\" naked"};
+							"singing \"I kissed a girl\" naked."};
 	if (_hitPoints == 0)
 		return ;
 	std::cout	<< "\033[34m" << _name << ": Your challenge is to " << challenge[rand() % 5] << std::endl

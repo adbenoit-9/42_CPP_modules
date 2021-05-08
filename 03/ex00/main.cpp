@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 15:20:06 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 16:22:21 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 20:20:30 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     srand(time(NULL));
     {
-        std::cout << "Basic :" << std::endl;
+        std::cout << "Basic test:" << std::endl;
         FragTrap John("John");
         John.meleeAttack("Suzanne");
         John.rangedAttack("Suzanne");
@@ -26,7 +26,7 @@ int main()
     }
     
     {
-        std::cout << "\nDead :" << std::endl;
+        std::cout << "\nDeath test:" << std::endl;
         FragTrap John("John");
         John.meleeAttack("Suzanne");
         John.rangedAttack("Suzanne");
@@ -40,7 +40,7 @@ int main()
     }
 
     {
-        std::cout << "\nEnergy :" << std::endl;
+        std::cout << "\nEnergy test:" << std::endl;
         FragTrap John("John");
         John.vaulthunter_dot_exe("Suzanne");
         John.vaulthunter_dot_exe("Paul");
