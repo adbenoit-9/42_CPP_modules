@@ -6,26 +6,36 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 02:06:11 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 16:22:16 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
+FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5, "33m")
 {
-	std::cout	<< "\033[1;33m" << name << ": Let's get this party started !"
+	std::cout	<< "\033[1;" << _color << name << ": Let's get this party started !"
 				<< "\033[0m" << std::endl;
 }
+
+FragTrap::FragTrap(const FragTrap& toCopy) : ClapTrap(toCopy) {}
 
 FragTrap::~FragTrap(void)
 {
 	if (_hitPoints != 0)
-		std::cout	<< "\033[33;1m" << _name << ": It's really quiet... "
+		std::cout	<< "\033[1;" << _color << _name << ": It's really quiet... "
 					<< "and lonely... It's boring. Bye !\033[0m" << std::endl;
 	else
-		std::cout	<< "\033[33;1m" << _name << " : OMG I'M DEAD !"
+		std::cout	<< "\033[1;" << _color << _name << " : OMG I'M DEAD !"
 					<< "\033[0m" << std::endl;
+}
+
+FragTrap&	FragTrap::operator = (const FragTrap& toCopy) throw()
+{
+	if (this == &toCopy)
+		return (*this);
+	*this = toCopy;
+	return (*this);
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)
@@ -44,5 +54,5 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 					<< "\033[2;3;35m" << _name << " -25 energy points\033[0m" << std::endl;
 	}
 	else
-		std::cout	<< "\033[33m" << _name << ": I Need more energy..." << std::endl;
+		std::cout	<< "\033[" << _color << _name << ": I Need more energy..." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 20:19:18 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 17:41:47 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,19 @@ FragTrap::FragTrap(std::string name)
 	_armorDamageReduction = 5;
 }
 
+FragTrap::FragTrap(const FragTrap& toCopy)
+{
+	_hitPoints = toCopy._hitPoints;
+	_maxHitPoints = toCopy._maxHitPoints;
+	_energyPoints = toCopy._energyPoints;
+	_maxEnergyPoints = toCopy._maxEnergyPoints;
+	_level = toCopy._level;
+	_name = toCopy._name;
+	_meleeAttackDamage = toCopy._meleeAttackDamage;
+	_rangedAttackDamage = toCopy._rangedAttackDamage;
+	_armorDamageReduction = toCopy._armorDamageReduction;
+}
+
 FragTrap::~FragTrap(void)
 {
 	if (_hitPoints != 0)
@@ -35,6 +48,22 @@ FragTrap::~FragTrap(void)
 	else
 		std::cout	<< "\033[33;1m" << _name << " : OMG I'M DEAD !"
 					<< "\033[0m" << std::endl;
+}
+
+FragTrap&	FragTrap::operator = (const FragTrap& toCopy) throw()
+{
+	if (this == &toCopy)
+		return (*this);
+	_hitPoints = toCopy._hitPoints;
+	_maxHitPoints = toCopy._maxHitPoints;
+	_energyPoints = toCopy._energyPoints;
+	_maxEnergyPoints = toCopy._maxEnergyPoints;
+	_level = toCopy._level;
+	_name = toCopy._name;
+	_meleeAttackDamage = toCopy._meleeAttackDamage;
+	_rangedAttackDamage = toCopy._rangedAttackDamage;
+	_armorDamageReduction = toCopy._armorDamageReduction;
+	return (*this);
 }
 
 void	FragTrap::rangedAttack(std::string const & target)

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 17:14:44 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 17:41:38 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,21 @@ class	FragTrap
 		unsigned int	_energyPoints;
 		unsigned int	_maxEnergyPoints;
 		unsigned int	_level;
-		std::string		_name;
 		unsigned int	_meleeAttackDamage;
 		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
+		std::string		_name;
 
 	public:
 		FragTrap(std::string name);
+		FragTrap(const FragTrap& toCopy);
 		~FragTrap(void);
-		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	vaulthunter_dot_exe(std::string const & target);
+		FragTrap&	operator = (const FragTrap& toCopy) throw();
+		void		rangedAttack(std::string const & target);
+		void		meleeAttack(std::string const & target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
+		void		vaulthunter_dot_exe(std::string const & target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 17:14:56 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 17:42:01 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,21 @@ class	ScavTrap
 		unsigned int	_energyPoints;
 		unsigned int	_maxEnergyPoints;
 		unsigned int	_level;
-		std::string		_name;
 		unsigned int	_meleeAttackDamage;
 		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
+		std::string		_name;
 
 	public:
 		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap& toCopy);
 		~ScavTrap(void);
-		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	challengeNewcomer(std::string const & target);
+		ScavTrap&	operator = (const ScavTrap& toCopy) throw();
+		void		rangedAttack(std::string const & target);
+		void		meleeAttack(std::string const & target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
+		void		challengeNewcomer(std::string const & target);
 };
 
 #endif

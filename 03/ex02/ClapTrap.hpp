@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 02:05:42 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 17:31:40 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,20 @@ class	ClapTrap
 		unsigned int	_meleeAttackDamage;
 		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
+		std::string		_color;
 
 	public:
 		ClapTrap(unsigned int hit, unsigned int maxHit, unsigned int energy,
 					unsigned int maxEnergy, unsigned int level, std::string name,
-					unsigned int meleeDam, unsigned int rangedDam, unsigned int armorReduc);
+					unsigned int meleeDam, unsigned int rangedDam,
+					unsigned int armorReduc, std::string color);
+		ClapTrap(const ClapTrap& toCopy);
 		~ClapTrap(void);
-		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		ClapTrap&	operator = (const ClapTrap& toCopy) throw();
+		void		rangedAttack(std::string const & target);
+		void		meleeAttack(std::string const & target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
 };
 
 #endif

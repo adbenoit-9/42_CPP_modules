@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 00:19:37 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/08 17:41:34 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ ScavTrap::ScavTrap(std::string name)
 	_armorDamageReduction = 3;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& toCopy)
+{
+	_hitPoints = toCopy._hitPoints;
+	_maxHitPoints = toCopy._maxHitPoints;
+	_energyPoints = toCopy._energyPoints;
+	_maxEnergyPoints = toCopy._maxEnergyPoints;
+	_level = toCopy._level;
+	_name = toCopy._name;
+	_meleeAttackDamage = toCopy._meleeAttackDamage;
+	_rangedAttackDamage = toCopy._rangedAttackDamage;
+	_armorDamageReduction = toCopy._armorDamageReduction;
+	// ou *this = toCopy;
+}
+
 ScavTrap::~ScavTrap(void)
 {
 	if (_hitPoints != 0)
@@ -34,6 +48,22 @@ ScavTrap::~ScavTrap(void)
 	else
 		std::cout	<< "\033[34;1m" << _name << " : Hodor..."
 					<< "\033[0m" << std::endl;
+}
+
+ScavTrap&	ScavTrap::operator = (const ScavTrap& toCopy) throw()
+{
+	if (this == &toCopy)
+		return (*this);
+	_hitPoints = toCopy._hitPoints;
+	_maxHitPoints = toCopy._maxHitPoints;
+	_energyPoints = toCopy._energyPoints;
+	_maxEnergyPoints = toCopy._maxEnergyPoints;
+	_level = toCopy._level;
+	_name = toCopy._name;
+	_meleeAttackDamage = toCopy._meleeAttackDamage;
+	_rangedAttackDamage = toCopy._rangedAttackDamage;
+	_armorDamageReduction = toCopy._armorDamageReduction;
+	return (*this);
 }
 
 void	ScavTrap::rangedAttack(std::string const & target)
