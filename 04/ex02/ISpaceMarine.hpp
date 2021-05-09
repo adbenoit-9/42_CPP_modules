@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AWeapon.hpp                                        :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 11:09:04 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/09 18:10:21 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/09 18:30:14 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/05/09 20:49:31 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AWEAPON_H
-# define AWEAPON_H
+#ifndef ISPACEMARINE_HPP
+# define ISPACEMARINE_HPP
 
 # include <iostream>
 # include <string>
 
-class AWeapon
+class   ISpaceMarine
 {
-	private:
-		AWeapon();
-
-	protected:
-		std::string _name;
-		int			_damage;
-		int			_APCost;
-		
 	public:
-		AWeapon(std::string const & name, int apcost, int damage);
-		AWeapon(AWeapon const & toCopy);
-		virtual ~AWeapon(void);
-		AWeapon&		operator = (const AWeapon& toCopy);
-		std::string 	getName(void) const;
-		int 			getAPCost(void) const;
-		int 			getDamage(void) const;
-		virtual void	attack(void) const = 0;  
+		virtual ~ISpaceMarine(void) {}
+		virtual ISpaceMarine*	clone(void) const = 0;
+		virtual void			battleCry(void) const = 0;
+		virtual void			rangedAttack(void) const = 0;
+		virtual void			meleeAttack(void) const = 0;
 };
 
 #endif
