@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 19:11:48 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/09 20:57:09 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/10 00:14:07 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class   AssaultTerminator : public ISpaceMarine
 		AssaultTerminator(void);
 		AssaultTerminator(const AssaultTerminator& toCopy);
 		~AssaultTerminator(void);
-		ISpaceMarine*	clone(void);
-		void			battleCry(void);
-		void			rangedAttack(void);
-		void			meleeAttack(void);
+		ISpaceMarine*	clone(void) const;
+		void			battleCry(void) const;
+		void			rangedAttack(void) const;
+		void			meleeAttack(void) const;
 };
 
 #endif
