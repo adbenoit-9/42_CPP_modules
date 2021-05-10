@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 16:21:33 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/10 16:55:04 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/10 21:57:02 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ unsigned int 		AMateria::getXP(void) const
 
 void				AMateria::use(ICharacter& target)
 {
-
+	std::cout << target.getName() << std::endl;
 }

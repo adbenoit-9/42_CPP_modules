@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 18:14:19 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/10 18:16:01 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/10 21:54:49 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,21 @@
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
-class MateriaSource
-{
+#include "IMateriaSource.hpp"
 
+class MateriaSource : public IMateriaSource
+{
+	private:
+		AMateria*   _materia[4];
+		int         _numberMateria;
+
+	public:
+		MateriaSource(void);
+		MateriaSource(const MateriaSource& toCopy);
+		~MateriaSource(void);
+		MateriaSource& operator = (const MateriaSource& toCopy);
+		void learnMateria(AMateria* m);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

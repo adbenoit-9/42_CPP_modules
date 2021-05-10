@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:35:13 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/10 18:10:43 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/10 22:10:25 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ std::string const & Character::getName(void) const
 
 void				Character::equip(AMateria* m)
 {
-	if (_numberMateria == 4)
+	if (_numberMateria == 4 || !m)
 		return ;
 	_materia[_numberMateria] = m->clone();
 	++_numberMateria;
