@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 16:36:25 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/10 16:51:37 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/10 22:58:47 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ AMateria*	Ice::clone(void) const
 
 Ice&		Ice::operator = (const Ice& toCopy)
 {
-	*this = toCopy;
+	this->AMateria::operator=(toCopy);
 	return (*this);
 }
 

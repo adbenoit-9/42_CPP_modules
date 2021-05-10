@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 16:51:53 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/10 22:12:56 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/10 22:47:47 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ AMateria*	Cure::clone(void) const
 
 Cure&		Cure::operator = (const Cure& toCopy)
 {
-	*this = toCopy;
+	this->AMateria::operator=(toCopy);
 	return (*this);
 }
 
