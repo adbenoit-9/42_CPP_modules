@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:20:36 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/11 15:37:17 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/11 21:39:57 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,23 +70,25 @@ void		Bureaucrat::decrementGrade(void)
 
 const char* Bureaucrat::GradeTooHighException::what(void) const throw ()
 {
-    return "Grade too high exception.";
+    return "Grade too high.";
 }
 
 const char* Bureaucrat::GradeTooLowException::what(void) const throw ()
 {
-    return "Grade too low exception.";
+    return "Grade too low.";
 }
 
-void		Bureaucrat::signForm(Form const & f)
+void		Bureaucrat::signForm(Form* f)
 {
 	try
 	{
-		f.beSigned();
+		f->beSigned(this);
+		std::cout << _name << " signed " << f->getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << _name << ", cant signed " << f->getName()
+		<< " because at least grade " << f->getGrade() << " needed." << std::endl;
 	}
 	
 }

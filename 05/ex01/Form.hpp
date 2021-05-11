@@ -6,16 +6,16 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:57:24 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/11 15:34:06 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/11 21:21:47 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
-# include <iostream>
-# include <exception>
-# include <string>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -38,22 +38,22 @@ class Form
 
 	private:
 		Form(void);
-		std::string	const	_name;
-		int	const			_grade;
+		std::string	_name;
+		int			_grade;
 		int					_isSigned;
 	
 	public:
 		Form(std::string const & name, int grade);
 		Form(Form const & toCopy);
-		~Form(void);
+		~Form(void) {}
 		Form const &	operator = (Form const & toCopy);
 
-		void			getName(void);	
-		void			getGrade(void);	
-		void			getState(void);	
-		void			beSigned(Bureaucrat const & b);
-}
+		std::string		getName(void) const;	
+		int				getGrade(void) const;	
+		int				getState(void) const;	
+		void			beSigned(Bureaucrat* b);
+};
 
-ostream &	operator << (ostream & os, Form const & f);
+std::ostream &	operator << (std::ostream & os, Form const & f);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:19:51 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/11 15:36:05 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/11 21:12:54 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <iostream>
 # include <exception>
 # include <string>
+
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -51,7 +55,7 @@ class Bureaucrat
 		int					getGrade(void) const;
 		void				incrementGrade(void);
 		void				decrementGrade(void);
-		void				signForm(Form const & f) const;
+		void				signForm(Form* f);
 };
 
 std::ostream&	operator << (std::ostream& os, const Bureaucrat& b);
