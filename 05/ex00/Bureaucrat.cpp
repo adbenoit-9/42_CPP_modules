@@ -6,15 +6,14 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:20:36 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/11 14:53:50 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/11 23:41:39 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string const & name, int grade)
+Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 {
-	_name = name;
 	if (grade > 150)
 		throw GradeTooLowException();
 	else if (grade < 1)
@@ -23,15 +22,10 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade)
 		_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& toCopy) : _name(toCopy.getName())
-{
-	_name = toCopy.getName();
-	_grade = toCopy.getGrade();
-}
+Bureaucrat::Bureaucrat(const Bureaucrat& toCopy) : _name(toCopy.getName()), _grade(toCopy.getGrade()) {}
 		
 Bureaucrat&	Bureaucrat::operator = (const Bureaucrat& toCopy)
 {
-	_name = toCopy.getName();
 	_grade = toCopy.getGrade();
 	return (*this);
 }
@@ -70,10 +64,10 @@ void		Bureaucrat::decrementGrade(void)
 
 const char* Bureaucrat::GradeTooHighException::what(void) const throw ()
 {
-    return "Grade too high exception.";
+    return "Grade too high.";
 }
 
 const char* Bureaucrat::GradeTooLowException::what(void) const throw ()
 {
-    return "Grade too low exception.";
+    return "Grade too low.";
 }

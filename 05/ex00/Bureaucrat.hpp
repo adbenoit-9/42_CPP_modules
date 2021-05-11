@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:19:51 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/11 14:54:50 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/11 23:16:08 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class Bureaucrat
 
 	private:
 		Bureaucrat(void) {}
-		std::string	_name;
-		int			_grade;
+		const std::string	_name;
+		int					_grade;
 
 	public:
 		Bureaucrat(std::string const & name, int grade);
