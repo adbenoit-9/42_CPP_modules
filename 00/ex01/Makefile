@@ -6,7 +6,7 @@
 #    By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/03 11:21:34 by adbenoit          #+#    #+#              #
-#    Updated: 2021/05/03 15:37:22 by adbenoit         ###   ########.fr        #
+#    Updated: 2021/05/12 10:57:52 by adbenoit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	phoneBook
 CC		=	clang++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	main.cpp		phonebook.cpp
+SRC		=	main.cpp		Contact.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all:	$(NAME)

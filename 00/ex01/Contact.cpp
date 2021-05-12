@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:59:23 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/03 23:22:40 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 11:00:47 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Contact.hpp"
 
-void    Contact::addContact(void)
+void        Contact::addContact(void)
 {
     std::cout << "\n";
     std::cout << "First name : ";
@@ -39,17 +39,7 @@ void    Contact::addContact(void)
     std::getline(std::cin, darkestSecret);
 }
 
-void    display(std::string str, int last)
-{
-    if (str.length() >= 10)
-        std::cout << str.substr(0, 9) << ".";
-    else
-        std::cout << std::setw(10) << str;
-    if (last == 0)
-        std::cout << "|";
-}
-
-void    Contact::displayContact(int i)
+void        Contact::displayContact(int i)
 {
     std::cout << std::setw(10) << i << "|";
     display(firstName, 0);
@@ -58,7 +48,7 @@ void    Contact::displayContact(int i)
     std::cout << std::endl;
 }
 
-void    Contact::displayCoor(void)
+void        Contact::displayCoor(void)
 {
     std::cout   << "First name: " << firstName << std::endl
                 << "Last name: " << lastName << std::endl
@@ -66,8 +56,3 @@ void    Contact::displayCoor(void)
                 << "Email Address: " << emailAddr << std::endl
                 << "Phone Number: " << phoneNum << std::endl;
 }
-
-// void    Contact::searchContact(int i)
-// {
-//     displayContact(i);
-// }
