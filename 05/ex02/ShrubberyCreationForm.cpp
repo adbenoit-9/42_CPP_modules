@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 23:43:47 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 18:09:31 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:38:41 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
 
 ShrubberyCreationForm&  ShrubberyCreationForm::operator = (ShrubberyCreationForm const & toCopy)
 {
-	*this = toCopy;
+	this->Form::operator=(toCopy);
 	return (*this); 
 }
 
@@ -43,12 +43,13 @@ static std::string		setTree(void)
 	return (tree);
 }
 
-void    ShrubberyCreationForm::action(void)
+void					ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	if (this->getGradeExec() < executor.getGrade())
+		throw GradeTooLowException();
 	std::ofstream file;
 
 	file.open(_target + "_shrubbery");
 	file << setTree() << std::endl;
 	file << setTree();
-	
 }

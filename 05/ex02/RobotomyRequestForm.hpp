@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 23:44:05 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 18:08:06 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:26:35 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class RobotomyRequestForm : public Form
         ~RobotomyRequestForm(void);
         RobotomyRequestForm&  operator = (RobotomyRequestForm const & toCopy);
 
-        void    action();
+        void	execute(Bureaucrat const & executor) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:57:24 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/11 23:37:58 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:36:26 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,6 @@ class Bureaucrat;
 
 class Form
 {
-	class GradeTooHighException : virtual public std::exception
-	{
-		public:
-			GradeTooHighException(void) {}
-
-			virtual const char* what() const throw ();
-			
-	};
-	
-	class GradeTooLowException : virtual public std::exception
-	{
-		public:
-			GradeTooLowException(void) {}
-
-			virtual const char* what() const throw ();
-	};
 
 	private:
 		Form(void);
@@ -44,6 +28,22 @@ class Form
 		bool				_isSigned;
 	
 	public:
+		class GradeTooHighException : virtual public std::exception
+		{
+			public:
+				GradeTooHighException(void) {}
+
+				virtual const char* what() const throw ();			
+		};
+		
+		class GradeTooLowException : virtual public std::exception
+		{
+				public:
+					GradeTooLowException(void) {}
+
+					virtual const char* what() const throw ();
+		};
+
 		Form(std::string const & name, int gradeSign, int gradeExec);
 		Form(Form const & toCopy);
 		~Form(void) {}
@@ -54,6 +54,7 @@ class Form
 		int				getGradeExec(void) const;	
 		int				getState(void) const;	
 		void			beSigned(Bureaucrat* b);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream &	operator << (std::ostream & os, Form const & f);

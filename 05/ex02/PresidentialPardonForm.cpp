@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 23:43:47 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 18:09:21 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:42:16 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ PresidentialPardonForm::~PresidentialPardonForm(void) {}
 
 PresidentialPardonForm&  PresidentialPardonForm::operator = (PresidentialPardonForm const & toCopy)
 {
-	*this = toCopy;
+	this->Form::operator=(toCopy);
 	return (*this); 
 }
 
-void    PresidentialPardonForm::action(void)
+void					PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << _target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+	if (this->getGradeExec() < executor.getGrade())
+		throw GradeTooLowException();
+	else
+		std::cout << _target << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

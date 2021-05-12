@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 23:43:47 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 18:09:13 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:47:27 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {}
 
 RobotomyRequestForm&  RobotomyRequestForm::operator = (RobotomyRequestForm const & toCopy)
 {
-	*this = toCopy;
+	this->Form::operator=(toCopy);
 	return (*this); 
 }
 
-void    RobotomyRequestForm::action(void)
+void					RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << _target << " has been robotomized successfully 50\% of the time" << std::endl;
+	if (this->getGradeExec() < executor.getGrade())
+		throw GradeTooLowException();
+	else
+		std::cout << "Bzzzzz... " << _target << " has been robotomized successfully 50\% of the time" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 23:44:05 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 16:55:27 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 22:24:06 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class ShrubberyCreationForm : public Form
         ~ShrubberyCreationForm(void);
         ShrubberyCreationForm&  operator = (ShrubberyCreationForm const & toCopy);
 
-        void    action();
+        void	execute(Bureaucrat const & executor) const;
+
 };
 
 #endif
