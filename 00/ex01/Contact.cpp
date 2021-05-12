@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:59:23 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 11:00:47 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 11:22:36 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void        Contact::addContact(void)
     std::getline(std::cin, darkestSecret);
 }
 
-void        Contact::displayContact(int i)
+void        Contact::displayContact(int i) const
 {
     std::cout << std::setw(10) << i << "|";
     display(firstName, 0);
@@ -48,7 +48,7 @@ void        Contact::displayContact(int i)
     std::cout << std::endl;
 }
 
-void        Contact::displayCoor(void)
+void        Contact::displayCoor(void) const
 {
     std::cout   << "First name: " << firstName << std::endl
                 << "Last name: " << lastName << std::endl

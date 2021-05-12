@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:20:17 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 11:01:02 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 11:22:30 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,8 @@ class   Contact
         Contact(void) {}
         ~Contact(void) {}
         void    addContact(void);
-        void    searchContact(int i);
-        void    displayContact(int i);
-        void    displayCoor(void);
+        void    displayContact(int i) const;
+        void    displayCoor(void) const;
 };
 
 void    display(std::string str, int last);
