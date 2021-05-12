@@ -6,12 +6,13 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:16:57 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/11 23:38:21 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/12 16:49:19 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
@@ -32,4 +33,6 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	ShrubberyCreationForm test("lui");
+	test.action();
 }
