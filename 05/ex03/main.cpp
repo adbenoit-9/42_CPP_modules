@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:16:57 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 23:15:29 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/13 19:23:14 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,7 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	Intern randomIntern;
-	randomIntern.makeForm("presidential request", "maison");
+	Form *f;
+	f = randomIntern.makeForm("presidential pardon", "maison");
+	delete f;
 }

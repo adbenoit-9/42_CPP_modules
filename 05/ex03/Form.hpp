@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:57:24 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/12 22:36:26 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/13 19:21:24 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class Form
 
 		Form(std::string const & name, int gradeSign, int gradeExec);
 		Form(Form const & toCopy);
-		~Form(void) {}
+		virtual ~Form(void) {}
 		Form const &	operator = (Form const & toCopy);
 
 		std::string		getName(void) const;	
@@ -54,7 +54,7 @@ class Form
 		int				getGradeExec(void) const;	
 		int				getState(void) const;	
 		void			beSigned(Bureaucrat* b);
-		virtual void	execute(Bureaucrat const & executor) const = 0;
+		virtual void	execute(Bureaucrat const &) const = 0;
 };
 
 std::ostream &	operator << (std::ostream & os, Form const & f);
