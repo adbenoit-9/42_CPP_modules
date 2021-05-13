@@ -6,15 +6,11 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:16:15 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 12:43:17 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:41:23 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-Zombie::Zombie(void)
-{
-}
 
 Zombie::Zombie(std::string name, std::string type)
 {

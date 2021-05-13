@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:13:28 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 12:43:11 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/13 17:34:20 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,16 @@
 
 class   Zombie
 {
-    private:
-        std::string _name;
-        std::string _type;
-    
-    public:
-        Zombie(void);
-        Zombie(std::string name, std::string type);
-        void    announce(void);
-        
+	private:
+		std::string _name;
+		std::string _type;
+	
+	public:
+		Zombie(void) {}
+		Zombie(std::string name, std::string type);
+		~Zombie(void) {}
+		void    announce(void);
+		
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 15:28:09 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 12:44:58 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/13 17:23:49 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class   ZombieHorde
 {
     private:
-        Zombie *_horde;
+        Zombie *_zombies;
         int     _nbZombie;
 
     public:

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:19:51 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 12:42:06 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/13 17:06:00 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class   ZombieEvent
         std::string _type;
 
     public:
-        void    setZombieType(void);
+        void    setZombieType(std::string type);
         Zombie* newZombie(std::string name);
         void    randomChump(void);
 };

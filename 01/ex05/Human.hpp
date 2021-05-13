@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 00:38:35 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/07 12:47:26 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/13 18:07:46 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 
 class   Human
 {
-    private:
-        const Brain _brain;
-    
-    public:
-        std::string	identify(void) const;
-        Brain	    getBrain(void) const;
+	private:
+		const Brain _brain;
+	
+	public:
+		Human(void) {}
+		~Human(void) {}
+		std::string 	identify(void) const;
+		const Brain&	getBrain(void) const;
 };
 
 #endif

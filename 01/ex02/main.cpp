@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:12:08 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/05 12:34:27 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/13 17:19:06 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,33 @@ int main()
     ZombieEvent event;
     
 	srand(time(NULL));
+
     std::cout << "Random zombies :" << std::endl;
-    event.setZombieType();
+
+    event.setZombieType("Generic Zombie");
     event.randomChump();
-    event.setZombieType();
+
+    event.setZombieType("Runner Zombie");
     event.randomChump();
-    event.setZombieType();
+
+    event.setZombieType("Voodoo Zombie");
     event.randomChump();
-    event.setZombieType();
+
+    event.setZombieType("Walking Zombie");
     event.randomChump();
+
     std::cout << "\nOthers :" << std::endl;
-    zombie = event.newZombie("Jean");
-    zombie->announce();
-    delete zombie;
+
+    Zombie jean("Jean", "Runner Zombie");
+    jean.announce();
+
     zombie = event.newZombie("Huguette");
     zombie->announce();
     delete zombie;
+
     zombie = event.newZombie("Camille");
     zombie->announce();
     delete zombie;
+
     return (0);
 }
