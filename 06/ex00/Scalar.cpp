@@ -6,18 +6,45 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:13:22 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/14 21:49:36 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/14 22:57:57 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Scalar.hpp"
 
+static bool  isNumber(std::string str)
+{
+    for (int i = 0; str[i]; i++)
+    {
+        if (!isdigit(str[i]))
+        {
+            if (str[i] == '-' && i == 0)
+                ;
+            else if (str[i] == 'f' && !str[i + 1])
+                return (1);
+            else
+                return (0);
+        }
+    }
+    return (1);  
+}
+
 Scalar::Scalar(std::string str)
 {
-	_float = std::stof(str);
-    _double = std::stod(str);
-    _int = _float;
-    _char = _int;
+    if (str.length() == 1 && (str[0] < '0' || str[0] > '9'))
+    {
+        _float = str[0];
+        _double = str[0];
+        _int = str[0];
+        _char = str[0]; 
+    }
+    else
+    {
+	    _float = std::stof(str);
+        _double = std::stod(str);
+        _int = _float;
+        _char = _int;
+    }
 }
 
 char        Scalar::getChar(void) const
