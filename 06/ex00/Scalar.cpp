@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:13:22 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/14 21:04:28 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/14 21:49:36 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,6 @@ float        Scalar::getFloat(void) const
 double        Scalar::getDouble(void) const
 {
     return (_double);
-}
-
-const char* Scalar::ConversionFailed::what() const throw ()
-{
-    return ("Conversion Failed");
 }
 
 std::ostream&	operator << (std::ostream& os, const Scalar & scalar)
