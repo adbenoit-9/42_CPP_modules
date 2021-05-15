@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:50:13 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/14 21:04:35 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/15 15:05:30 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ class Scalar
 		char	_char;
 	
 	public:
+		class	WrongScalarType : virtual public std::exception
+		{
+			public:
+				WrongScalarType(void) {}
+				virtual const char* what() const throw();
+		};
 		Scalar(std::string str);
 		~Scalar(void) {}
 		char	getChar(void) const;

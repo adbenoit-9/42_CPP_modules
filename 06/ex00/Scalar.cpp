@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:13:22 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/14 22:57:57 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/15 15:08:29 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 static bool  isNumber(std::string str)
 {
+    if (!str.compare("inf") || !str.compare("-inf") || !str.compare("nan")
+    || !str.compare("-inff") || !str.compare("inff") || !str.compare("nanf"))
+        return (1);
     for (int i = 0; str[i]; i++)
     {
         if (!isdigit(str[i]))
@@ -31,7 +34,14 @@ static bool  isNumber(std::string str)
 
 Scalar::Scalar(std::string str)
 {
-    if (str.length() == 1 && (str[0] < '0' || str[0] > '9'))
+    if (isNumber(str) == 1)
+    {
+	    _float = std::stof(str);
+        _double = std::stod(str);
+        _int = _float;
+        _char = _int;
+    }
+    else if (str.length() == 1)
     {
         _float = str[0];
         _double = str[0];
@@ -39,12 +49,7 @@ Scalar::Scalar(std::string str)
         _char = str[0]; 
     }
     else
-    {
-	    _float = std::stof(str);
-        _double = std::stod(str);
-        _int = _float;
-        _char = _int;
-    }
+        throw WrongScalarType();
 }
 
 char        Scalar::getChar(void) const
@@ -87,3 +92,7 @@ std::ostream&	operator << (std::ostream& os, const Scalar & scalar)
     return (os);
 }
 
+const char* Scalar::WrongScalarType::what() const throw()
+{
+	return "Wrong scalar type";
+}
