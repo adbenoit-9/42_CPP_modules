@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 12:36:37 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 17:01:01 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:28:14 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,18 @@ NinjaTrap::NinjaTrap(const NinjaTrap& toCopy) : ClapTrap(toCopy) {}
 NinjaTrap::~NinjaTrap(void)
 {
 	if (_hitPoints != 0)
-		std::cout	<< "\033[36;1m" << _name << ": Only one can remain.\033[0m" << std::endl;
+		std::cout	<< "\033[1;" << _color << _name << ": Only one can remain.\033[0m" << std::endl;
 	else
-		std::cout	<< "\033[36;1m" << _name << " : Ninja never quit..."
+		std::cout	<< "\033[1;" << _color << _name << " : Ninja never quit..."
 					<< "\033[0m" << std::endl;
+}
+
+NinjaTrap&	NinjaTrap::operator = (const NinjaTrap& toCopy)
+{
+	if (this == &toCopy)
+		return (*this);
+	*this = toCopy;
+	return (*this);
 }
 
 void	NinjaTrap::ninjaShoebox(FragTrap& target)

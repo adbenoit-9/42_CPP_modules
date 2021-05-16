@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 16:20:53 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ScavTrap::~ScavTrap(void)
 					<< "\033[0m" << std::endl;
 }
 
-ScavTrap&	ScavTrap::operator = (const ScavTrap& toCopy) throw()
+ScavTrap&	ScavTrap::operator = (const ScavTrap& toCopy)
 {
 	if (this == &toCopy)
 		return (*this);

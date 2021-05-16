@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 15:20:06 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 20:10:58 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 16:46:37 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
     {
         std::cout << "Basic test:" << std::endl;
         FragTrap John("John");
+
         John.meleeAttack("Suzanne");
         John.rangedAttack("Suzanne");
         John.takeDamage(20);
@@ -28,6 +29,7 @@ int main()
     {
         std::cout << "\nDeath test:" << std::endl;
         FragTrap John("John");
+
         John.meleeAttack("Suzanne");
         John.rangedAttack("Suzanne");
         John.takeDamage(20);
@@ -42,6 +44,7 @@ int main()
     {
         std::cout << "\nEnergy test:" << std::endl;
         FragTrap John("John");
+
         John.vaulthunter_dot_exe("Suzanne");
         John.vaulthunter_dot_exe("Paul");
         John.vaulthunter_dot_exe("Anna");
@@ -52,7 +55,6 @@ int main()
         John.beRepaired(100);
         John.takeDamage(30);
         John.beRepaired(100);
-
     }
     
 }

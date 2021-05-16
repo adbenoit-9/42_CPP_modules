@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 17:42:01 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class	ScavTrap
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& toCopy);
 		~ScavTrap(void);
-		ScavTrap&	operator = (const ScavTrap& toCopy) throw();
+		ScavTrap&	operator = (const ScavTrap& toCopy);
 		void		rangedAttack(std::string const & target);
 		void		meleeAttack(std::string const & target);
 		void		takeDamage(unsigned int amount);

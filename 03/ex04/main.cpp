@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 15:20:06 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 19:50:38 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 16:45:01 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main()
         FragTrap John("John");
         ScavTrap Hodor("Hodor");
         SuperTrap Superman("Clark");
+
         Hodor.rangedAttack("John");
         John.takeDamage(15);
         John.rangedAttack("Hodor");
@@ -34,7 +35,9 @@ int main()
         Hodor.beRepaired(50);
         Hodor.challengeNewcomer("John");
         Superman.beRepaired(50);
+
         NinjaTrap MichaelAngelo("Michael Angelo");
+
         MichaelAngelo.rangedAttack("Hodor");
         Hodor.takeDamage(5);
         Hodor.meleeAttack("John");
@@ -45,7 +48,9 @@ int main()
         Hodor.takeDamage(30);
         Superman.vaulthunter_dot_exe("John");
         John.takeDamage(50);
+
         NinjaTrap Naruto("Naruto");
+
         Superman.rangedAttack("Naruto");
         Naruto.takeDamage(15);
         Hodor.challengeNewcomer("Naruto");

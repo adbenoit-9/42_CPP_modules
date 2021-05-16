@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 15:20:06 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 20:04:38 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 16:46:03 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main()
     {
         FragTrap John("John");
         ScavTrap Hodor("Hodor");
+
         Hodor.rangedAttack("John");
         John.takeDamage(15);
         John.rangedAttack("Hodor");

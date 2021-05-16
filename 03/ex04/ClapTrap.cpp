@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 19:56:13 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:26:34 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "\033[40mClapTrap destructor called. (" << _name << ")\033[0m" << std::endl;
 }
 
-ClapTrap&	ClapTrap::operator = (const ClapTrap& toCopy) throw()
+ClapTrap&	ClapTrap::operator = (const ClapTrap& toCopy)
 {
 	if (this == &toCopy)
 		return (*this);

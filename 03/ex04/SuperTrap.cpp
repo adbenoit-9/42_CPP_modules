@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 19:32:24 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ SuperTrap::~SuperTrap(void)
 					<< "\033[0m" << std::endl;
 }
 
-SuperTrap&	SuperTrap::operator = (const SuperTrap& toCopy) throw()
+SuperTrap&	SuperTrap::operator = (const SuperTrap& toCopy)
 {
 	if (this == &toCopy)
 		return (*this);

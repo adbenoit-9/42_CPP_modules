@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 19:51:30 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:25:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ FragTrap::~FragTrap(void)
 					<< "\033[0m" << std::endl;
 }
 
-FragTrap&	FragTrap::operator = (const FragTrap& toCopy) throw()
+FragTrap&	FragTrap::operator = (const FragTrap& toCopy)
 {
 	if (this == &toCopy)
 		return (*this);

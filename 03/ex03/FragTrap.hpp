@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 16:22:45 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	FragTrap : public ClapTrap
 		FragTrap(std::string name);
 		FragTrap(const FragTrap& toCopy);
 		~FragTrap(void);
-		FragTrap&	operator = (const FragTrap& toCopy) throw();
+		FragTrap&	operator = (const FragTrap& toCopy);
 		void		vaulthunter_dot_exe(std::string const & target);
 };
 

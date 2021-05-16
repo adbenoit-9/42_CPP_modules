@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 17:41:38 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class	FragTrap
 		FragTrap(std::string name);
 		FragTrap(const FragTrap& toCopy);
 		~FragTrap(void);
-		FragTrap&	operator = (const FragTrap& toCopy) throw();
+		FragTrap&	operator = (const FragTrap& toCopy);
 		void		rangedAttack(std::string const & target);
 		void		meleeAttack(std::string const & target);
 		void		takeDamage(unsigned int amount);

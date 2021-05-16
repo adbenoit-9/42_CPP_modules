@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 12:36:37 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 19:11:03 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:28:14 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ NinjaTrap::~NinjaTrap(void)
 	else
 		std::cout	<< "\033[1;" << _color << _name << " : Ninja never quit..."
 					<< "\033[0m" << std::endl;
+}
+
+NinjaTrap&	NinjaTrap::operator = (const NinjaTrap& toCopy)
+{
+	if (this == &toCopy)
+		return (*this);
+	*this = toCopy;
+	return (*this);
 }
 
 void	NinjaTrap::ninjaShoebox(FragTrap& target)

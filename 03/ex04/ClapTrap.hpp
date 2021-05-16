@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 15:33:11 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:25:46 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class	ClapTrap
 					unsigned int armorReduc, std::string color);
 		ClapTrap(const ClapTrap& toCopy);
 		~ClapTrap(void);
-		ClapTrap&	operator = (const ClapTrap& toCopy) throw();
+		ClapTrap&	operator = (const ClapTrap& toCopy);
 		void		rangedAttack(std::string const & target);
 		void		meleeAttack(std::string const & target);
 		void		takeDamage(unsigned int amount);

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 18:53:54 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	SuperTrap : public FragTrap, public NinjaTrap
 		SuperTrap(std::string name);
 		SuperTrap(const SuperTrap& toCopy);
 		~SuperTrap(void);
-		SuperTrap&	operator = (const SuperTrap& toCopy) throw();
+		SuperTrap&	operator = (const SuperTrap& toCopy);
 };
 
 #endif
