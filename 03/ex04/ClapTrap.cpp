@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/16 15:26:34 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 17:00:18 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ ClapTrap::ClapTrap(const ClapTrap& toCopy)
 	_rangedAttackDamage = toCopy._rangedAttackDamage;
 	_armorDamageReduction = toCopy._armorDamageReduction;
 	_color = toCopy._color;
-	// ou *this = toCopy;
 }
 
 ClapTrap::~ClapTrap(void)

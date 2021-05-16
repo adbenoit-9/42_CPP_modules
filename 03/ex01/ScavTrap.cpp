@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 17:01:14 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ ScavTrap::ScavTrap(const ScavTrap& toCopy)
 	_meleeAttackDamage = toCopy._meleeAttackDamage;
 	_rangedAttackDamage = toCopy._rangedAttackDamage;
 	_armorDamageReduction = toCopy._armorDamageReduction;
-	// ou *this = toCopy;
 }
 
 ScavTrap::~ScavTrap(void)
