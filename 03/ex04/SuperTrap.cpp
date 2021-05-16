@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 16:54:59 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ SuperTrap::SuperTrap(const SuperTrap& toCopy) : ClapTrap(toCopy), FragTrap(toCop
 SuperTrap::~SuperTrap(void)
 {
 	if (_hitPoints != 0)
-		std::cout	<< "\033[1;" << _color << _name << ": It's really quiet... "
-					<< "and lonely... It's boring. Bye !\033[0m" << std::endl;
+		std::cout	<< "\033[1;" << _color << _name << ": Easy !\033[0m" << std::endl;
 	else
-		std::cout	<< "\033[1;" << _color << _name << " : OMG I'M DEAD !"
+		std::cout	<< "\033[1;" << _color << _name << " : Ouch !"
 					<< "\033[0m" << std::endl;
 }
 
