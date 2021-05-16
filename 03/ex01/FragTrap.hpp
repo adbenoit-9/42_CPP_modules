@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/16 15:26:53 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/16 18:58:09 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ class	FragTrap
 		unsigned int	_energyPoints;
 		unsigned int	_maxEnergyPoints;
 		unsigned int	_level;
+		std::string		_name;
 		unsigned int	_meleeAttackDamage;
 		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
-		std::string		_name;
 
 	public:
 		FragTrap(std::string name);
