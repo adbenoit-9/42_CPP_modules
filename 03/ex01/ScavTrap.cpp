@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/16 19:02:56 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/18 17:48:58 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ScavTrap::rangedAttack(std::string const & target)
 {
 	if (this->_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[34m" << this->_name << ": Let my door alone... Hiyah !" << std::endl
+	std::cout	<< "\033[34m" << this->_name << ": I saw you stupid idiot !" << std::endl
 				<< "\033[2;3;31m" << this->_name << " caused " << this->_rangedAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }
@@ -77,7 +77,7 @@ void	ScavTrap::meleeAttack(std::string const & target)
 {
 	if (this->_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[34m" << this->_name << ": I saw you stupid idiot !" << std::endl
+	std::cout	<< "\033[34m" << this->_name << ": Let my door alone... Hiyah !" << std::endl
 				<< "\033[2;2;3;31m" << this->_name << " caused " << this->_rangedAttackDamage
 				<< " damages to " << target << "\033[0m" << std::endl;
 }

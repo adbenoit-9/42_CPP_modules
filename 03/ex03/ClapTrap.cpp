@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:13:50 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/16 19:02:56 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/18 17:48:16 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,28 @@ void	ClapTrap::rangedAttack(std::string const & target)
 {
 	if (this->_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[" << this->_color << this->_name << ": In yo'FACE !" << std::endl
-				<< "\033[2;3;31m" << this->_name << " caused " << this->_rangedAttackDamage
-				<< " damages to " << target << "\033[0m" << std::endl;
+	std::cout	<< "\033[" << this->_color << this->_name;
+	if (this->_color[1] == '3')
+		std::cout << ": In yo'FACE !" << std::endl;
+	else
+		std::cout << ": I saw you stupid idiot !" << std::endl;
+	std::cout	<< "\033[2;3;31m" << this->_name << " caused "
+				<< this->_rangedAttackDamage << " damages to "
+				<< target << "\033[0m" << std::endl;
 }
 
 void	ClapTrap::meleeAttack(std::string const & target)
 {
 	if (this->_hitPoints == 0)
 		return ;
-	std::cout	<< "\033[" << this->_color << this->_name << ": Take that !" << std::endl
-				<< "\033[2;3;31m" << this->_name << " caused " << this->_meleeAttackDamage
-				<< " damages to " << target << "\033[0m" << std::endl;
+	std::cout	<< "\033[" << this->_color << this->_name;
+	if (this->_color[1] == '3')
+		std::cout << ": Take that !" << std::endl;
+	else
+		std::cout << ": Let my door alone... Hiyah !" << std::endl;
+	std::cout	<< "\033[2;3;31m" << this->_name << " caused "
+				<< this->_meleeAttackDamage << " damages to "
+				<< target << "\033[0m" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)

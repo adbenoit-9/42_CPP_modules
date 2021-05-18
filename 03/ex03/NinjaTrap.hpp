@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 11:59:58 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/16 15:27:58 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/18 17:55:34 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class	NinjaTrap : public virtual ClapTrap
 		void	ninjaShoebox(FragTrap& target);
 		void	ninjaShoebox(ScavTrap& target);
 		void	ninjaShoebox(NinjaTrap& target);
+		void	ninjaShoebox(ClapTrap& target);
 };
 
 #endif

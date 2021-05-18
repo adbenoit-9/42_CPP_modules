@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 12:36:37 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/16 15:28:14 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/05/18 17:57:05 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,13 @@ void	NinjaTrap::ninjaShoebox(NinjaTrap& target)
 	if (_hitPoints == 0)
 		return ;
 	std::cout	<< "\033[" << _color << _name << " threw Makibishi on "
+				<< target.getName() << ".\033[0m" << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(ClapTrap& target)
+{
+	if (_hitPoints == 0)
+		return ;
+	std::cout	<< "\033[" << _color << _name << " spit on "
 				<< target.getName() << ".\033[0m" << std::endl;
 }
