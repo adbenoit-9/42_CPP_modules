@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/27 18:36:30 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/31 15:29:40 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/31 15:41:39 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/05/31 17:54:20 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
 
 # include <iostream>
-# include <string>
 
-template<typename T>
-void	swap(T & a, T & b)
+template< typename T, typename F >
+void	iter(T *array, int size, F fct)
 {
-	T tmp = a;
-
-	a = b;
-	b = tmp;
+	for(int i = 0; i < size; i++)
+		fct(array[i]);
 }
 
 template<typename T>
-T	min(T const & a, T const & b)
+void	display(T & elem)
 {
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-template<typename T>
-T	max(T const & a, T const & b)
-{
-	if (a > b)
-		return (a);
-	return (b);
+	std::cout << elem << std::endl;
 }
 
 #endif

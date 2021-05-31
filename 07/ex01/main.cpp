@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/27 18:36:30 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/31 15:29:40 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/31 15:41:15 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/05/31 17:55:50 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#include "iter.hpp"
 
-# include <iostream>
-# include <string>
-
-template<typename T>
-void	swap(T & a, T & b)
+void	display_char(char & elem)
 {
-	T tmp = a;
-
-	a = b;
-	b = tmp;
+	std::cout << elem << std::endl;
 }
 
-template<typename T>
-T	min(T const & a, T const & b)
+int main(void)
 {
-	if (a < b)
-		return (a);
-	return (b);
-}
+	char str[4] = {'t', 'e', 's', 't'};
+	std::cout << "Array : test" << std::endl;
+	iter<char, void(char &)>( str, 4 , display );
 
-template<typename T>
-T	max(T const & a, T const & b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
+	int array[4] = {1, 2, 3, 4};
+	std::cout << "Array : 1234" << std::endl;
+	iter<int, void(int &)>( array, 4 , display );
 
-#endif
+	return 0;
+}
