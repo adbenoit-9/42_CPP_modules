@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
+/*   Wizard.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 12:05:11 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/09 12:51:08 by adbenoit         ###   ########.fr       */
+/*   Created: 2021/05/08 21:25:30 by adbenoit          #+#    #+#             */
+/*   Updated: 2021/06/03 11:54:48 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_H
-# define PLASMARIFLE_H
+#ifndef WIZARD_H
+# define WIZARD_H
 
-# include "AWeapon.hpp"
+# include "Sorcerer.hpp"
 
-class PlasmaRifle : public AWeapon
-{	
-	public:
-		PlasmaRifle(void);
-		PlasmaRifle(PlasmaRifle const & toCopy);
-		virtual ~PlasmaRifle(void);
-		PlasmaRifle&	operator = (const PlasmaRifle& toCopy);
-		void	    attack(void) const;  
+class   Wizard : public Sorcerer
+{
+    private:
+        Wizard(void);
+    public:
+        Wizard(std::string name, std::string title);
+        Wizard(const Wizard& toCopy);
+        ~Wizard(void);
+        Wizard&         operator = (const Wizard& toCopy);
 };
 
 #endif

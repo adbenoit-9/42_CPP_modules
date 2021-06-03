@@ -22,7 +22,7 @@ class PowerFist : public AWeapon
 	public:
 		PowerFist(void);
 		PowerFist(PowerFist const & toCopy);
-		~PowerFist(void);
+		virtual ~PowerFist(void);
 		PowerFist&	operator = (const PowerFist& toCopy);
 		void	    attack(void) const;  
 };

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_H
-# define ENEMY_H
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
 
 # include <iostream>
 # include <string>
@@ -24,13 +24,13 @@ class Enemy
 
 	protected:
 		std::string _type;
-		int			_hp;
+		int			_HP;
 		
 	public:
 		Enemy(int hp, std::string const & type);
 		Enemy(Enemy const & toCopy);
 		virtual ~Enemy(void);
-		Enemy&		operator = (const Enemy& toCopy);
+		Enemy&			operator = (const Enemy& toCopy);
 		std::string 	getType(void) const;
 		int 			getHP(void) const;
 		virtual void 	takeDamage(int amount);

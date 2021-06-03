@@ -14,14 +14,14 @@
 
 Enemy::Enemy(int hp, std::string const & type)
 {
-	_hp = hp;
-	_type = type;
+	this->_HP = hp;
+	this->_type = type;
 }
 
 Enemy::Enemy(Enemy const & toCopy)
 {
-	_hp = toCopy._hp;
-	_type = toCopy._type;
+	this->_HP = toCopy.getHP();
+	this->_type = toCopy.getType();
 }
 
 Enemy::~Enemy(void)
@@ -31,24 +31,24 @@ Enemy::~Enemy(void)
 
 Enemy&		Enemy::operator = (const Enemy& toCopy)
 {
-	_hp = toCopy._hp;
-	_type = toCopy._type;
+	this->_HP = toCopy.getHP();
+	this->_type = toCopy.getType();
 	return (*this);
 }
 
 std::string Enemy::getType(void) const
 {
-	return (_type);
+	return (this->_type);
 }
 
 int 		Enemy::getHP(void) const
 {
-	return (_hp);
+	return (this->_HP);
 }
 
 void		Enemy::takeDamage(int amount)
 {
-	_hp -= amount;
-	if (_hp < 0)
-		_hp = 0;
+	this->_HP -= amount;
+	if (this->_HP < 0)
+		this->_HP = 0;
 }

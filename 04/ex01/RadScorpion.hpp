@@ -20,7 +20,7 @@ class RadScorpion : public Enemy
 	public:
 		RadScorpion(void);
 		RadScorpion(RadScorpion const & toCopy);
-		~RadScorpion(void);
+		virtual ~RadScorpion(void);
 		RadScorpion&	operator = (const RadScorpion& toCopy);
 };
 

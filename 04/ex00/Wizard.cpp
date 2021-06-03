@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.cpp                                           :+:      :+:    :+:   */
+/*   Wizard.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 21:23:36 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/03 12:03:47 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/03 11:54:30 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Wizard.hpp"
 
-Peon::Peon(std::string name) : Victim(name)
+Wizard::Wizard(std::string name, std::string title) : Sorcerer(name, title)
 {
-    std::cout << "Zog zog" << std::endl;
+    std::cout << "Bouh" << std::endl;
 }
 
-Peon::Peon(const Peon& toCopy) : Victim(toCopy) {}
+Wizard::Wizard(const Wizard& toCopy) : Sorcerer(toCopy) {}
 
-Peon::~Peon(void)
+Wizard::~Wizard(void)
 {
-    std::cout << "Bleuark..." << std::endl;
+    std::cout << "Boom!" << std::endl;
 }
 
-Peon&   Peon::operator = (const Peon& toCopy)
+Wizard&   Wizard::operator = (const Wizard& toCopy)
 {
     this->_name = toCopy.getName();
+    this->_title = toCopy.getTitle();
     return (*this);
-}
-
-void    Peon::getPolymorphed(void) const
-{
-    std::cout << this->_name << " has been turned into a pink pony!" << std::endl;
 }

@@ -26,7 +26,7 @@ RadScorpion::~RadScorpion(void)
 
 RadScorpion&	RadScorpion::operator = (const RadScorpion& toCopy)
 {
-	_type = toCopy._type;
-	_hp = toCopy._hp;
+	this->_type = toCopy.getType();
+	this->_HP = toCopy.getHP();
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 21:27:53 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 22:37:56 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/03 12:04:25 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 Sorcerer::Sorcerer(std::string name, std::string title)
 {
-    _name = name;
-    _title = title;
-    std::cout << _name << ", " << _title << ", is born!" << std::endl;
+    this->_name = name;
+    this->_title = title;
+    std::cout << this->_name << ", " << this->_title << ", is born!" << std::endl;
 }
 
 Sorcerer::Sorcerer(const Sorcerer& toCopy)
 {
-    _name = toCopy._name;
-    _title = toCopy._title;
+    this->_name = toCopy.getName();
+    this->_title = toCopy.getTitle();
 }
 
 Sorcerer::~Sorcerer(void)
 {
-    std::cout   << _name << ", " << _title
+    std::cout   << this->_name << ", " << this->_title
                 << ", is dead. Consequences will never be the same!" << std::endl;
 }
 
-Sorcerer&   Sorcerer::operator = (const Sorcerer& toCopy) throw()
+Sorcerer&       Sorcerer::operator = (const Sorcerer& toCopy) throw()
 {
-    _name = toCopy._name;
-    _title = toCopy._title;
+    this->_name = toCopy.getName();
+    this->_title = toCopy.getTitle();
     return (*this);
 }
 
@@ -45,17 +45,17 @@ std::ostream&   operator << (std::ostream& os, const Sorcerer& s) throw()
     return (os);
 }
 
-std::string Sorcerer::getName(void) const
+std::string     Sorcerer::getName(void) const
 {
-    return (_name);
+    return (this->_name);
 }
 
-std::string Sorcerer::getTitle(void) const
+std::string     Sorcerer::getTitle(void) const
 {
-    return (_title);
+    return (this->_title);
 }
 
-void        Sorcerer::polymorph(Victim const & v) const
+void            Sorcerer::polymorph(Victim const & v) const
 {
     v.getPolymorphed();
 }

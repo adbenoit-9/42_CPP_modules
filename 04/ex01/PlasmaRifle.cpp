@@ -26,9 +26,9 @@ PlasmaRifle::~PlasmaRifle(void)
 
 PlasmaRifle&	PlasmaRifle::operator = (const PlasmaRifle& toCopy)
 {
-	_name = toCopy._name;
-	_APCost = toCopy._APCost;
-	_damage = toCopy._damage;
+	this->_name = toCopy.getName();
+	this->_APCost = toCopy.getAPCost();
+	this->_damage = toCopy.getDamage();
 	return (*this);
 }
 

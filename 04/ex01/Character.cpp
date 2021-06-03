@@ -14,16 +14,16 @@
 
 Character::Character(std::string const & name)
 {
-	_name = name;
-	_AP = 40;
-	_weapon = NULL;
+	this->_name = name;
+	this->_AP = 40;
+	this->_weapon = NULL;
 }
 
 Character::Character(Character const & toCopy)
 {
-	_name = toCopy._name;
-	_AP = toCopy._AP;
-	_weapon = toCopy._weapon;
+	this->_name = toCopy.getName();
+	this->_AP = toCopy.getAP();
+	this->_weapon = toCopy.getWeapon();
 }
 
 Character::~Character(void)
@@ -33,38 +33,38 @@ Character::~Character(void)
 
 Character&	Character::operator = (const Character& toCopy)
 {
-	_name = toCopy._name;
-	_AP = toCopy._AP;
-	_weapon = toCopy._weapon;
+	this->_name = toCopy.getName();
+	this->_AP = toCopy.getAP();
+	this->_weapon = toCopy.getWeapon();
 	return (*this);
 }
 
 std::string Character::getName(void) const
 {
-	return (_name);
+	return (this->_name);
 }
 
 void    	Character::recoverAP(void)
 {
-	_AP += 10;
-	if (_AP > 40)
-		_AP = 40;
+	this->_AP += 10;
+	if (this->_AP > 40)
+		this->_AP = 40;
 }
 
 void    	Character::equip(AWeapon *weapon)
 {
-	_weapon = weapon;
+	this->_weapon = weapon;
 }
 
 void		Character::attack(Enemy *enemy)
 {
-	if (_weapon && _AP >= _weapon->getAPCost())
+	if (this->_weapon && this->_AP >= this->_weapon->getAPCost())
 	{
-		std::cout	<< _name << " attacks " << enemy->getType()
-					<< " with a " << _weapon->getName() << std::endl;
-		_weapon->attack();
-		_AP -= _weapon->getAPCost();
-		enemy->takeDamage(_weapon->getDamage());
+		std::cout	<< this->_name << " attacks " << enemy->getType()
+					<< " with a " << this->_weapon->getName() << std::endl;
+		this->_weapon->attack();
+		this->_AP -= this->_weapon->getAPCost();
+		enemy->takeDamage(this->_weapon->getDamage());
 		if (enemy->getHP() == 0)
 			delete enemy;
 	}
@@ -72,12 +72,12 @@ void		Character::attack(Enemy *enemy)
 
 int          Character::getAP(void) const
 {
-	return (_AP);
+	return (this->_AP);
 }
 
 AWeapon		*Character::getWeapon(void) const
 {
-	return (_weapon);
+	return (this->_weapon);
 }
 
 std::ostream&	operator << (std::ostream& os, const Character& character)

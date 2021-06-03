@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 21:25:30 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 23:23:56 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/03 12:03:53 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   Peon : public Victim
         Peon(std::string name);
         Peon(const Peon& toCopy);
         ~Peon(void);
-        Peon&   operator = (const Peon& toCopy);
+        Peon&           operator = (const Peon& toCopy);
         virtual void    getPolymorphed(void) const;
 };
 

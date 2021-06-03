@@ -26,8 +26,8 @@ SuperMutant::~SuperMutant(void)
 
 SuperMutant&	SuperMutant::operator = (const SuperMutant& toCopy)
 {
-	_type = toCopy._type;
-	_hp = toCopy._hp;
+	this->_type = toCopy.getType();
+	this->_HP = toCopy.getHP();
 	return (*this);
 }
 
@@ -37,7 +37,7 @@ void		SuperMutant::takeDamage(int amount)
 		amount = 0;
 	else
 		amount -= 3;
-	_hp -= amount;
-	if (_hp < 0)
-		_hp = 0;
+	this->_HP -= amount;
+	if (this->_HP < 0)
+		this->_HP = 0;
 }

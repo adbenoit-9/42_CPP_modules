@@ -20,7 +20,7 @@ class SuperMutant : public Enemy
 	public:
 		SuperMutant(void);
 		SuperMutant(SuperMutant const & toCopy);
-		~SuperMutant(void);
+		virtual ~SuperMutant(void);
 		SuperMutant&	operator = (const SuperMutant& toCopy);
 		void			takeDamage(int amount);
 };

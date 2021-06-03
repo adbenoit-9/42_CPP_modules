@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 21:31:19 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/08 23:24:00 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/03 11:54:44 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 class   Sorcerer
 {
-    private:
+    protected:
         std::string _name;
         std::string _title;
         Sorcerer(void);
