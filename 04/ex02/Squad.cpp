@@ -14,59 +14,65 @@
 
 Squad::Squad(void) : ISquad()
 {
-    _numberUnit = 0;
-    _spaceMarine = NULL;
+    this->_count = 0;
+    this->_units = NULL;
 }
 
 Squad::Squad(const Squad& toCopy) : ISquad(toCopy)
 {
-    _numberUnit = toCopy._numberUnit;
-    _spaceMarine = new ISpaceMarine*[_numberUnit];
-    for (int i = 0; i < _numberUnit; i++)
-        _spaceMarine[i] = toCopy._spaceMarine[i]->clone();
+    this->_count = toCopy.getCount();
+    this->_units = new ISpaceMarine*[this->_count];
+    for (int i = 0; i < this->_count; i++)
+        this->_units[i] = toCopy.getUnit(i)->clone();
 }
 
 Squad::~Squad(void)
 {
-    for (int i = 0; i < _numberUnit; i++)
-        delete _spaceMarine[i];
-    delete[] _spaceMarine;
+    for (int i = 0; i < this->_count; i++)
+        delete this->_units[i];
+    delete[] this->_units;
 }
 
 Squad& Squad::operator = (const Squad& toCopy)
 {
-    _numberUnit = toCopy._numberUnit;
-    _spaceMarine = new ISpaceMarine*[_numberUnit];
-    for (int i = 0; i < _numberUnit; i++)
-        _spaceMarine[i] = toCopy._spaceMarine[i]->clone();
+    if (this->_units)
+    {
+        for (int i = 0; i < this->_count; i++)
+            delete this->_units[i];
+        delete[] this->_units;
+    }
+    this->_count = toCopy.getCount();
+    this->_units = new ISpaceMarine*[this->_count];
+    for (int i = 0; i < this->_count; i++)
+        this->_units[i] = toCopy.getUnit(i)->clone();
     return (*this);
 }
 
 int				Squad::getCount(void) const
 {
-    return (_numberUnit);
+    return (this->_count);
 }
 
 ISpaceMarine*	Squad::getUnit(int n) const
 {
-    if (n >= _numberUnit || n < 0)
+    if (n >= this->_count || n < 0)
         return (NULL);
-    return (_spaceMarine[n]);
+    return (this->_units[n]);
 }
 
 int				Squad::push(ISpaceMarine* add)
 {
     if (!add)
-        return (_numberUnit);
-    for (int i = 0; i < _numberUnit; i++)
-        if (_spaceMarine[i] == add)
-            return (_numberUnit);
-    ISpaceMarine **tmp = new ISpaceMarine*[_numberUnit + 1];
-    for (int i = 0; i < _numberUnit; i++)
-        tmp[i] = _spaceMarine[i];
-    delete[] _spaceMarine;
-    tmp[_numberUnit] = add;
-    _spaceMarine = tmp;
-    ++_numberUnit;
-    return (_numberUnit);
+        return (this->_count);
+    for (int i = 0; i < this->_count; i++)
+        if (this->_units[i] == add)
+            return (this->_count);
+    ISpaceMarine **tmp = new ISpaceMarine*[this->_count + 1];
+    for (int i = 0; i < this->_count; i++)
+        tmp[i] = this->_units[i];
+    delete[] this->_units;
+    tmp[this->_count] = add;
+    this->_units = tmp;
+    ++this->_count;
+    return (this->_count);
 }

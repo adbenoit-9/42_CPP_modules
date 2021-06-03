@@ -30,7 +30,23 @@ int main()
 		cur->rangedAttack();
 		cur->meleeAttack();
 	}
-	delete vlc;
+
+	std::cout << std::endl << "\033[1mTest assignement :\033[0m" << std::endl;
+	ISquad* vlc2;
+	vlc2 = vlc;
+
+	std::cout << &vlc << std::endl << &vlc2 << std::endl;
+	for (int i = 0; i < vlc2->getCount(); ++i)
+	{
+		ISpaceMarine* cur = vlc2->getUnit(i);
+		std::cout << vlc->getUnit(i) << std::endl << vlc2->getUnit(i) << std::endl;
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
+
+	// delete vlc;
+	delete vlc2;
 
 	return 0;
 }

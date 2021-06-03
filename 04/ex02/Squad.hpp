@@ -19,17 +19,17 @@
 class   Squad : public ISquad
 {
 	private:
-		ISpaceMarine**	_spaceMarine;
-		int				_numberUnit;
+		ISpaceMarine**	_units;
+		int				_count;
 
 	public:
 		Squad(void);
 		Squad(const Squad& toCopy);
 		~Squad(void);
+		Squad&			operator = (const Squad& toCopy);
 		int				getCount(void) const;
 		int				push(ISpaceMarine*); 
 		ISpaceMarine*	getUnit(int n) const;
-		Squad&	operator = (const Squad& toCopy);
 };
 
 #endif

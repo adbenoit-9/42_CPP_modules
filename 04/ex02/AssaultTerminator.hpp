@@ -21,10 +21,11 @@ class   AssaultTerminator : public ISpaceMarine
 		AssaultTerminator(void);
 		AssaultTerminator(const AssaultTerminator& toCopy);
 		~AssaultTerminator(void);
-		ISpaceMarine*	clone(void) const;
-		void			battleCry(void) const;
-		void			rangedAttack(void) const;
-		void			meleeAttack(void) const;
+		AssaultTerminator&	operator = (const AssaultTerminator& toCopy);
+		ISpaceMarine*		clone(void) const;
+		void				battleCry(void) const;
+		void				rangedAttack(void) const;
+		void				meleeAttack(void) const;
 };
 
 #endif
