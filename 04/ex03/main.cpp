@@ -17,13 +17,6 @@
 
 int	main()
 {
-	// ICharacter* me = new Character("me");
-	// AMateria* ice = new Ice();
-
-	// ice->use(*me);
-	
-	// delete me;
-	// delete ice;
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -36,14 +29,31 @@ int	main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
+
+
 	ICharacter* bob = new Character("bob");
 
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+
+	AMateria* tmp2(tmp);
+	Character *john = new Character("john");
+	john->equip(src->createMateria("ice"));
+	john->use(0, *me);
+	std::cout << "John materia 0 XP = " << john->getMateria(0)->getXP() << std::endl;
+
+	Character *luc = new Character("luc");
+
+	luc = john;
+
+	std::cout << "Luc materia 0 XP = " <<  luc->getMateria(0)->getXP() << std::endl;
+
 	delete bob;
 	delete me;
 	delete src;
+	// delete luc;
+	delete john;
 
 	return 0;
 }

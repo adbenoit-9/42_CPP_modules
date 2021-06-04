@@ -14,43 +14,55 @@
 
 MateriaSource::MateriaSource(void) : IMateriaSource(), _count(0) {}
 
-MateriaSource::MateriaSource(const MateriaSource& toCopy) : IMateriaSource(toCopy), _count(toCopy.getCount())
+MateriaSource::MateriaSource(const MateriaSource& toCopy) :
+IMateriaSource(toCopy),
+_count(toCopy.getCount())
 {
-    for (int i = 0; i < _count; ++i)
-        _inventory[i] = toCopy._inventory[i];
+    for (int i = 0; i < this->_count; ++i)
+        this->_inventory[i] = toCopy.getMateria(i);
 }
 
 MateriaSource::~MateriaSource(void)
 {
-    for (int i = 0; i < _count; ++i)
-        delete _inventory[i];
+    for (int i = 0; i < this->_count; ++i)
+        delete this->_inventory[i];
 }
 
 MateriaSource&  MateriaSource::operator = (const MateriaSource& toCopy)
 {
-    for (int i = 0; i < _count; ++i)
-        delete _inventory[i];
-    _count = toCopy._count;
-    for (int i = 0; i < _count; ++i)
-        _inventory[i] = toCopy._inventory[i];
+    for (int i = 0; i < this->_count; ++i)
+        delete this->_inventory[i];
+    this->_count = toCopy.getCount();
+    for (int i = 0; i < this->_count; ++i)
+        this->_inventory[i] = toCopy.getMateria(i);
     return (*this);
+}
+
+int					MateriaSource::getCount(void) const
+{
+	return (this->_count);
+}
+
+AMateria*			MateriaSource::getMateria(int i) const
+{
+	return (this->_inventory[i]->clone());
 }
 
 void            MateriaSource::learnMateria(AMateria* m)
 {
-    if (_count < 4)
+    if (this->_count < 4)
     {
-        _inventory[_count] = m;
-        ++_count;
+        this->_inventory[this->_count] = m;
+        ++this->_count;
     }
 }
 
 AMateria*       MateriaSource::createMateria(std::string const & type)
 {
-    for (int i = 0; i < _count; ++i)
+    for (int i = 0; i < this->_count; ++i)
     {
-        if (_inventory[i]->getType().compare(type) == 0)
-            return (_inventory[i]->clone());
+        if (this->_inventory[i]->getType().compare(type) == 0)
+            return (this->_inventory[i]->clone());
     }
     return (0);
 }

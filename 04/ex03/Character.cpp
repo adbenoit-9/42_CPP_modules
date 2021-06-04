@@ -43,6 +43,7 @@ std::string const & Character::getName(void) const
 {
 	return (this->_name);
 }
+
 int					Character::getCount(void) const
 {
 	return (this->_count);

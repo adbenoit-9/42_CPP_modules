@@ -28,8 +28,10 @@ class MateriaSource : public IMateriaSource
 		MateriaSource(const MateriaSource& toCopy);
 		~MateriaSource(void);
 		MateriaSource& operator = (const MateriaSource& toCopy);
-		void learnMateria(AMateria* m);
-		AMateria* createMateria(std::string const & type);
+		int				getCount(void) const;
+		AMateria*		getMateria(int i) const;
+		void 			learnMateria(AMateria* m);
+		AMateria* 		createMateria(std::string const & type);
 };
 
 #endif
