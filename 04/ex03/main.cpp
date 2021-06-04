@@ -41,6 +41,7 @@ int	main()
 	Character *john = new Character("john");
 	john->equip(src->createMateria("ice"));
 	john->use(0, *me);
+
 	std::cout << "John materia 0 XP = " << john->getMateria(0)->getXP() << std::endl;
 
 	Character *luc = new Character("luc");
@@ -52,7 +53,7 @@ int	main()
 	delete bob;
 	delete me;
 	delete src;
-	// delete luc;
+	// delete luc; pk meme adresse alors aue clone ? clone mauvais ?
 	delete john;
 
 	return 0;
