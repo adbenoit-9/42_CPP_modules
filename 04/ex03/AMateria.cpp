@@ -12,37 +12,26 @@
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type)
-{
-	_type = type;
-	_xp = 0;
-}
+AMateria::AMateria(std::string const & type) : _type(type), _xp(0) {}
 
-AMateria::AMateria(const AMateria& toCopy)
-{
-	_xp = toCopy._xp;
-	_type = toCopy._type;
-}
+AMateria::AMateria(const AMateria& toCopy) : _xp(toCopy.getXP()), _type(toCopy.getType()) {}
 
-AMateria::~AMateria(void)
-{
-
-}
+AMateria::~AMateria(void) {}
 
 AMateria&			AMateria::operator = (const AMateria& toCopy)
 {
-	_xp = toCopy._xp;
+	this->_xp = toCopy.getXP();
 	return (*this);
 }
 
 std::string const & AMateria::getType(void) const
 {
-	return (_type);
+	return (this->_type);
 }
 
 unsigned int 		AMateria::getXP(void) const
 {
-	return (_xp);
+	return (this->_xp);
 }
 
 void				AMateria::use(ICharacter& target)

@@ -12,20 +12,15 @@
 
 #include "Ice.hpp"
 
-Ice::Ice(void) : AMateria("ice")
-{
-}
+Ice::Ice(void) : AMateria("ice") {}
 
 Ice::Ice(const Ice& toCopy) : AMateria(toCopy) {}
 
-Ice::~Ice(void)
-{
-}
+Ice::~Ice(void) {}
 
 AMateria*	Ice::clone(void) const
 {
-	AMateria *clone = new Ice(*this);
-	return (clone);
+	return (new Ice(*this));
 }
 
 Ice&		Ice::operator = (const Ice& toCopy)

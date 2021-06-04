@@ -24,7 +24,8 @@ int	main()
 	
 	// delete me;
 	// delete ice;
-	IMateriaSource* src = new MateriaSource();src->learnMateria(new Ice());
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
 	ICharacter* me = new Character("me");

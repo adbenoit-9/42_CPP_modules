@@ -19,9 +19,9 @@ class	Character : public ICharacter
 {
 	private:
 		Character(void);
-		std::string	_name;
-		AMateria*	_materia[4];
-		int			_numberMateria;
+		const std::string&	_name;
+		AMateria*			_inventory[4];
+		int					_count;
 		
 
 	public:
@@ -30,6 +30,8 @@ class	Character : public ICharacter
 		~Character(void);
 		Character& 			operator = (const Character& toCopy);
 		std::string const & getName(void) const;
+		int					getCount(void) const;
+		AMateria*			getMateria(int i) const;
 		void 				equip(AMateria* m);
 		void 				unequip(int idx);
 		void 				use(int idx, ICharacter& target);

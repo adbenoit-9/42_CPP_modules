@@ -20,8 +20,8 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria*   _materia[4];
-		int         _numberMateria;
+		AMateria*   _inventory[4];
+		int         _count;
 
 	public:
 		MateriaSource(void);

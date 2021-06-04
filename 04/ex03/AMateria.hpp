@@ -23,7 +23,7 @@ class ICharacter;
 class AMateria
 {
 	protected:
-		std::string _type;
+		const std::string _type;
 		unsigned int _xp;
 
 	public:
@@ -34,7 +34,7 @@ class AMateria
 		std::string const & getType(void) const;
 		unsigned int		getXP(void) const;
 		virtual AMateria*	clone(void) const = 0;
-		virtual void		use(ICharacter& target);
+		virtual void		use(ICharacter& t3arget);
 };
 
 #endif

@@ -12,49 +12,45 @@
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(void) : IMateriaSource()
-{
-    _numberMateria = 0;
-}
+MateriaSource::MateriaSource(void) : IMateriaSource(), _count(0) {}
 
-MateriaSource::MateriaSource(const MateriaSource& toCopy) : IMateriaSource(toCopy)
+MateriaSource::MateriaSource(const MateriaSource& toCopy) : IMateriaSource(toCopy), _count(toCopy.getCount())
 {
-    _numberMateria = toCopy._numberMateria;
-    for (int i = 0; i < _numberMateria; ++i)
-        _materia[i] = toCopy._materia[i];
+    for (int i = 0; i < _count; ++i)
+        _inventory[i] = toCopy._inventory[i];
 }
 
 MateriaSource::~MateriaSource(void)
 {
-    for (int i = 0; i < _numberMateria; ++i)
-        delete _materia[i];
+    for (int i = 0; i < _count; ++i)
+        delete _inventory[i];
 }
 
 MateriaSource&  MateriaSource::operator = (const MateriaSource& toCopy)
 {
-    for (int i = 0; i < _numberMateria; ++i)
-        delete _materia[i];
-    _numberMateria = toCopy._numberMateria;
-    for (int i = 0; i < _numberMateria; ++i)
-        _materia[i] = toCopy._materia[i];
+    for (int i = 0; i < _count; ++i)
+        delete _inventory[i];
+    _count = toCopy._count;
+    for (int i = 0; i < _count; ++i)
+        _inventory[i] = toCopy._inventory[i];
     return (*this);
 }
 
 void            MateriaSource::learnMateria(AMateria* m)
 {
-    if (_numberMateria < 4)
+    if (_count < 4)
     {
-        _materia[_numberMateria] = m;
-        ++_numberMateria;
+        _inventory[_count] = m;
+        ++_count;
     }
 }
 
 AMateria*       MateriaSource::createMateria(std::string const & type)
 {
-    for (int i = 0; i < _numberMateria; ++i)
+    for (int i = 0; i < _count; ++i)
     {
-        if (_materia[i]->getType().compare(type) == 0)
-            return (_materia[i]->clone());
+        if (_inventory[i]->getType().compare(type) == 0)
+            return (_inventory[i]->clone());
     }
     return (0);
 }

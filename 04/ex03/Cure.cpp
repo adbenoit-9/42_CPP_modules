@@ -12,20 +12,15 @@
 
 #include "Cure.hpp"
 
-Cure::Cure(void) : AMateria("cure")
-{
-}
+Cure::Cure(void) : AMateria("cure") {}
 
 Cure::Cure(const Cure& toCopy) : AMateria(toCopy) {}
 
-Cure::~Cure(void)
-{
-}
+Cure::~Cure(void) {}
 
 AMateria*	Cure::clone(void) const
 {
-	AMateria *clone = new Cure(*this);
-	return (clone);
+	return (new Cure(*this));
 }
 
 Cure&		Cure::operator = (const Cure& toCopy)
@@ -38,5 +33,5 @@ Cure&		Cure::operator = (const Cure& toCopy)
 void		Cure::use(ICharacter& target)
 {
 	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
-	_xp += 10;
+	this->_xp += 10;
 }
