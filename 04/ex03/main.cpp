@@ -36,24 +36,32 @@ int	main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+	std::cout << std::endl << "\033[1mTest copy constructor :\033[0m" << std::endl;
+	AMateria* tmpCopy(tmp);
+	tmp->use(*bob);
+	tmpCopy->use(*bob);
 
-	AMateria* tmp2(tmp);
+	std::cout << std::endl;
 	Character *john = new Character("john");
 	john->equip(src->createMateria("ice"));
 	john->use(0, *me);
 
-	std::cout << "John materia 0 XP = " << john->getMateria(0)->getXP() << std::endl;
 
 	Character *luc = new Character("luc");
 
-	luc = john;
+	std::cout << std::endl << "\033[1mTest assignement :\033[0m" << std::endl;
+	*luc = *john;
 
-	std::cout << "Luc materia 0 XP = " <<  luc->getMateria(0)->getXP() << std::endl;
+	std::cout << "John materia[0] XP = " << john->getMateria(0)->getXP() << std::endl;
+	std::cout << "Luc materia[0] XP = " <<  luc->getMateria(0)->getXP() << std::endl;
+	john->use(0, *me);
+	std::cout << "John materia[0] XP = " << john->getMateria(0)->getXP() << std::endl;
+	std::cout << "Luc materia[0] XP = " <<  luc->getMateria(0)->getXP() << std::endl;
 
 	delete bob;
 	delete me;
 	delete src;
-	// delete luc; pk meme adresse alors aue clone ? clone mauvais ?
+	delete luc;
 	delete john;
 
 	return 0;

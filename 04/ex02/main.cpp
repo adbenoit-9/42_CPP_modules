@@ -23,6 +23,7 @@ int main()
 
 	vlc->push(bob);
 	vlc->push(jim);
+	std::cout << std::endl;
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
 		ISpaceMarine* cur = vlc->getUnit(i);
@@ -31,22 +32,32 @@ int main()
 		cur->meleeAttack();
 	}
 
-	std::cout << std::endl << "\033[1mTest assignement :\033[0m" << std::endl;
-	ISquad* vlc2;
-	vlc2 = vlc;
+	std::cout << std::endl << "\033[1mTest assignement :\033[0m" << std::endl << std::endl;
+	Squad* squad = new Squad;
 
-	std::cout << &vlc << std::endl << &vlc2 << std::endl;
-	for (int i = 0; i < vlc2->getCount(); ++i)
+	ISpaceMarine* jean = new AssaultTerminator;
+	ISpaceMarine* dean = new TacticalMarine;
+
+	squad->push(dean);
+	squad->push(jean);
+	
+	Squad* squadCopy = new Squad;
+	*squadCopy = *squad;
+
+	std::cout << "Number unit squad : " << squad->getCount() << std::endl;
+	std::cout << "Number unit squadCopy : " << squadCopy->getCount() << std::endl << std::endl;
+	for (int i = 0; i < squadCopy->getCount(); ++i)
 	{
-		ISpaceMarine* cur = vlc2->getUnit(i);
-		std::cout << vlc->getUnit(i) << std::endl << vlc2->getUnit(i) << std::endl;
+		ISpaceMarine* cur = squadCopy->getUnit(i);
 		cur->battleCry();
 		cur->rangedAttack();
 		cur->meleeAttack();
 	}
 
-	// delete vlc;
-	delete vlc2;
+	std::cout << std::endl;
+	delete vlc;
+	delete squad;
+	delete squadCopy;
 
 	return 0;
 }
