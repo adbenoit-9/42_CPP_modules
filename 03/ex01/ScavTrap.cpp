@@ -18,15 +18,6 @@ _meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3)
 {
 	std::cout	<< "\033[1;34m" << name << ": Hodor Hodor !"
 				<< "\033[0m" << std::endl;
-	_hitPoints = 100;
-	_maxHitPoints = 100;
-	_energyPoints = 50;
-	_maxEnergyPoints = 50;
-	_level = 1;
-	_name = name;
-	_meleeAttackDamage = 20;
-	_rangedAttackDamage = 15;
-	_armorDamageReduction = 3;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& toCopy): _hitPoints(toCopy._hitPoints),

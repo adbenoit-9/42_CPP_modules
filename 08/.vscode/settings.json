@@ -52,6 +52,9 @@
 		"type_traits": "cpp",
 		"typeinfo": "cpp",
 		"utility": "cpp",
-		"vector": "cpp"
+		"vector": "cpp",
+		"unordered_map": "cpp",
+		"stack": "cpp",
+		"list": "cpp"
 	}
 }
