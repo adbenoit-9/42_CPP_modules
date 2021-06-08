@@ -17,6 +17,7 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
+#include <cmath>
 #include <exception>
 
 class Scalar
@@ -35,8 +36,12 @@ class Scalar
 				WrongScalarType(void) {}
 				virtual const char* what() const throw();
 		};
+
 		Scalar(std::string str);
-		~Scalar(void) {}
+		Scalar(const Scalar& toCopy);
+		~Scalar(void);
+		Scalar&	operator = (const Scalar& toCopy);
+
 		char	getChar(void) const;
 		int		getInt(void) const;
 		float	getFloat(void) const;
