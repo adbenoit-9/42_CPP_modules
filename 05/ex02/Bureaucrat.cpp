@@ -23,14 +23,16 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& toCopy) : _name(toCopy.getName()), _grade(toCopy.getGrade()) {}
-		
+
+Bureaucrat::~Bureaucrat(void) {}
+
 Bureaucrat&	Bureaucrat::operator = (const Bureaucrat& toCopy)
 {
 	_grade = toCopy.getGrade();
 	return (*this);
 }
 
-std::string const &	Bureaucrat::getName(void) const
+std::string const	Bureaucrat::getName(void) const
 {
 	return (_name);
 }

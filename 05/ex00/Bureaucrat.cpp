@@ -19,25 +19,25 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 	else if (grade < 1)
 		throw GradeTooHighException();
 	else 
-		_grade = grade;
+		this->_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& toCopy) : _name(toCopy.getName()), _grade(toCopy.getGrade()) {}
 		
 Bureaucrat&	Bureaucrat::operator = (const Bureaucrat& toCopy)
 {
-	_grade = toCopy.getGrade();
+	this->_grade = toCopy.getGrade();
 	return (*this);
 }
 
-std::string const &	Bureaucrat::getName(void) const
+std::string const	Bureaucrat::getName(void) const
 {
-	return (_name);
+	return (this->_name);
 }
 
 int			Bureaucrat::getGrade(void) const
 {
-	return (_grade);
+	return (this->_grade);
 }
 
 std::ostream&	operator << (std::ostream& os, const Bureaucrat& b)
@@ -48,18 +48,18 @@ std::ostream&	operator << (std::ostream& os, const Bureaucrat& b)
 
 void		Bureaucrat::incrementGrade(void)
 {
-	if (_grade < 2)
+	if (this->_grade < 2)
 		throw GradeTooHighException();
 	else
-		--_grade;
+		--this->_grade;
 }
 
 void		Bureaucrat::decrementGrade(void)
 {
-	if (_grade > 149)
+	if (this->_grade > 149)
 		throw GradeTooLowException();
 	else
-		++_grade;
+		++this->_grade;
 }
 
 const char* Bureaucrat::GradeTooHighException::what(void) const throw ()

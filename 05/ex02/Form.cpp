@@ -24,6 +24,8 @@ Form::Form(std::string const & name, int gradeSign, int gradeExec) : _name(name)
 Form::Form(Form const & toCopy) : _name(toCopy._name), _gradeSign(toCopy._gradeSign),
 								_gradeExec(toCopy._gradeExec), _isSigned(toCopy._isSigned) {}
 
+Form::~Form(void) {}
+
 Form const &	Form::operator = (Form const & toCopy)
 {
 	_isSigned = toCopy._isSigned;

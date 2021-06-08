@@ -48,10 +48,10 @@ class Bureaucrat
 	public:
 		Bureaucrat(std::string const & name, int grade);
 		Bureaucrat(const Bureaucrat& toCopy);
-		~Bureaucrat(void) {}
+		~Bureaucrat(void);
 		Bureaucrat&			operator = (const Bureaucrat& toCopy);
 		
-		std::string const &	getName(void) const;
+		std::string const	getName(void) const;
 		int					getGrade(void) const;
 		void				incrementGrade(void);
 		void				decrementGrade(void);

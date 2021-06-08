@@ -21,9 +21,13 @@
 
 class Intern
 {
+
     public:
-        Intern(void) {}
-        ~Intern(void) {}
+        Intern(void);
+        Intern(const Intern &toCopy);
+        ~Intern(void);
+        Intern &    operator = (const Intern &toCopy);
+
         Form*    makeForm(std::string const & name, std::string const & target);
 };
 

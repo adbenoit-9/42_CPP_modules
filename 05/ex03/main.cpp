@@ -15,42 +15,12 @@
 
 int main()
 {
-
-	Bureaucrat lise("Lise", 6);
-	std::cout << lise;
-	
 	try
 	{
-		ShrubberyCreationForm SCF("maison");
-		std::cout << SCF;
-		lise.signForm(&SCF);
-		SCF.execute(lise);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	
-	try
-	{
-		PresidentialPardonForm PPF("maison");
-		std::cout << PPF;
-		lise.signForm(&PPF);
-		PPF.execute(lise);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	
-	try
-	{
-		lise.incrementGrade();
-		std::cout << lise;
-		RobotomyRequestForm RRF("maison");
-		std::cout << RRF;
-		lise.signForm(&RRF);
-		RRF.execute(lise);
+		Intern randomIntern;
+		Form *f;
+		f = randomIntern.makeForm("presidential pardon", "maison");
+		delete f;
 	}
 	catch(const std::exception& e)
 	{
@@ -59,17 +29,37 @@ int main()
 
 	try
 	{
-		PresidentialPardonForm PPF("maison");
-		std::cout << PPF;
-		lise.signForm(&PPF);
-		PPF.execute(lise);
+		Intern randomIntern;
+		Form *f;
+		f = randomIntern.makeForm("robotomy request", "maison");
+		delete f;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	Intern randomIntern;
-	Form *f;
-	f = randomIntern.makeForm("presidential pardon", "maison");
-	delete f;
+
+	try
+	{
+		Intern randomIntern;
+		Form *f;
+		f = randomIntern.makeForm("shrubbery creation", "maison");
+		delete f;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		Intern randomIntern;
+		Form *f;
+		f = randomIntern.makeForm("unknow", "maison");
+		delete f;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }

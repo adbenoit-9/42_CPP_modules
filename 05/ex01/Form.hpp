@@ -46,7 +46,7 @@ class Form
 	public:
 		Form(std::string const & name, int gradeSign, int gradeExec);
 		Form(Form const & toCopy);
-		~Form(void) {}
+		~Form(void);
 		Form const &	operator = (Form const & toCopy);
 
 		std::string		getName(void) const;	

@@ -13,7 +13,7 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string & target) :
-Form("RobotomyRequestForm", 25, 5), _target(target) {}
+Form("robotomy request", 25, 5), _target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & toCopy) : Form(toCopy) , _target(toCopy._target) {}
 

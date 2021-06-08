@@ -13,7 +13,7 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string & target) :
-Form("PresidentialPardonForm", 25, 5), _target(target) {}
+Form("presidential pardon", 25, 5), _target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & toCopy) : Form(toCopy) , _target(toCopy._target) {}
 

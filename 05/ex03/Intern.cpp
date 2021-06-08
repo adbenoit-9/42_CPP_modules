@@ -12,15 +12,34 @@
 
 #include "Intern.hpp"
 
-Form*    Intern::makeForm(std::string const & name, std::string const & target)
+Intern::Intern(void) {}
+
+Intern::Intern(const Intern &toCopy)
 {
-    Form    *form;
-    if (name.compare("presidential pardon") == 0)
-        form = new PresidentialPardonForm(target);
-    if (name.compare("robotomy request") == 0)
-        form = new RobotomyRequestForm(target);
-    if (name.compare("shrubbery creation") == 0)
-        form = new ShrubberyCreationForm(target);
-    std::cout << "Intern create " << *form;
-    return (form);
+    *this = toCopy;
+}
+
+Intern::~Intern(void) {}
+
+Intern& Intern::operator = (const Intern &toCopy)
+{
+    (void)toCopy;
+    return (*this);
+}
+
+Form*   Intern::makeForm(std::string const & name, std::string const & target)
+{
+    Form    *form[3] = {new PresidentialPardonForm(target), new RobotomyRequestForm(target), new ShrubberyCreationForm(target)};
+
+    for (int i = 0; i < 3; i++)
+    {
+        if (name.compare(form[i]->getName()) == 0)
+        {
+            std::cout << "Intern create " << *form[i] << std::endl;
+            return (form[i]);
+        }
+        delete form[i];
+    }
+    std::cout << "Unknow form" << std::endl;
+    return (0);
 }

@@ -46,7 +46,7 @@ class Form
 
 		Form(std::string const & name, int gradeSign, int gradeExec);
 		Form(Form const & toCopy);
-		virtual ~Form(void) {}
+		virtual ~Form(void);
 		Form const &	operator = (Form const & toCopy);
 
 		std::string		getName(void) const;	
