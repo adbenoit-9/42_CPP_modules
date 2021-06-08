@@ -22,7 +22,7 @@ class   Peon : public Victim
     public:
         Peon(std::string name);
         Peon(const Peon& toCopy);
-        ~Peon(void);
+        virtual ~Peon(void);
         Peon&           operator = (const Peon& toCopy);
         virtual void    getPolymorphed(void) const;
 };

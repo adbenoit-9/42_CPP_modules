@@ -22,7 +22,7 @@ class   Wizard : public Sorcerer
     public:
         Wizard(std::string name, std::string title);
         Wizard(const Wizard& toCopy);
-        ~Wizard(void);
+        virtual ~Wizard(void);
         Wizard&         operator = (const Wizard& toCopy);
 };
 

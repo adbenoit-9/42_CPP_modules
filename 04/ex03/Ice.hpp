@@ -20,7 +20,7 @@ class Ice : public AMateria
 	public:
 		Ice(void);
 		Ice(const Ice& toCopy);
-		~Ice(void);
+		virtual ~Ice(void);
 		Ice&		operator = (const Ice& toCopy);
 		AMateria*	clone(void) const;
 		void		use(ICharacter& target);

@@ -27,7 +27,7 @@ class	Character : public ICharacter
 	public:
 		Character(const std::string& name);
 		Character(const Character& toCopy);
-		~Character(void);
+		virtual ~Character(void);
 		Character& 			operator = (const Character& toCopy);
 		std::string const & getName(void) const;
 		int					getCount(void) const;

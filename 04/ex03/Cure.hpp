@@ -20,7 +20,7 @@ class Cure : public AMateria
 	public:
 		Cure(void);
 		Cure(const Cure& toCopy);
-		~Cure(void);
+		virtual ~Cure(void);
 		Cure&		operator = (const Cure& toCopy);
 		AMateria*	clone(void) const;
 		void		use(ICharacter& target);

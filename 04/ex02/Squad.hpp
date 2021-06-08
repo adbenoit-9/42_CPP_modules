@@ -25,7 +25,7 @@ class   Squad : public ISquad
 	public:
 		Squad(void);
 		Squad(const Squad& toCopy);
-		~Squad(void);
+		virtual ~Squad(void);
 		Squad&			operator = (const Squad& toCopy);
 		int				getCount(void) const;
 		int				push(ISpaceMarine*); 

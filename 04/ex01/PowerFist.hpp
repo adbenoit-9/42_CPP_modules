@@ -17,8 +17,6 @@
 
 class PowerFist : public AWeapon
 {
-	private:
-		
 	public:
 		PowerFist(void);
 		PowerFist(PowerFist const & toCopy);

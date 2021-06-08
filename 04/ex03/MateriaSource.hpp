@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// https://cpp.developpez.com/faq/cpp/?page=Les-classes-en-Cplusplus#Comment-creer-deux-classes-qui-font-reference-l-une-a-l-autre
-
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
@@ -26,7 +24,7 @@ class MateriaSource : public IMateriaSource
 	public:
 		MateriaSource(void);
 		MateriaSource(const MateriaSource& toCopy);
-		~MateriaSource(void);
+		virtual ~MateriaSource(void);
 		MateriaSource& operator = (const MateriaSource& toCopy);
 		int				getCount(void) const;
 		AMateria*		getMateria(int i) const;

@@ -25,7 +25,7 @@ class   Victim
     public:
         Victim(std::string name);
         Victim(const Victim& toCopy);
-        ~Victim();
+        virtual ~Victim();
         Victim&     operator = (const Victim& toCopy) throw();
         std::string getName(void) const;
         virtual void        getPolymorphed(void) const;

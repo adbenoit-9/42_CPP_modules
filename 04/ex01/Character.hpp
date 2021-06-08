@@ -23,8 +23,6 @@ class Character
 {
 	private:
 		Character(void);
-
-	protected:
 		std::string _name;
 		int			_AP;
         AWeapon     *_weapon;

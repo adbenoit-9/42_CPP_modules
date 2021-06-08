@@ -28,7 +28,7 @@ class   Sorcerer
     public:
         Sorcerer(std::string name, std::string title);
         Sorcerer(const Sorcerer& toCopy);
-        ~Sorcerer();
+        virtual ~Sorcerer();
         Sorcerer&   operator = (const Sorcerer& toCopy) throw();
         std::string getName(void) const;
         std::string getTitle(void) const;
