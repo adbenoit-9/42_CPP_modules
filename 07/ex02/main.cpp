@@ -14,6 +14,8 @@
 
 int main(void)
 {
+	Array<int> empty;
+
 	Array<int> tab(10);
 	
 	for (int i = 0; i < 10; i++)

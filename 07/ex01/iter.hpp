@@ -15,15 +15,15 @@
 
 # include <iostream>
 
-template< typename T, typename F >
-void	iter(T *array, int size, F fct)
+template< typename T >
+void	iter(T *array, int size, void fct(T const &))
 {
 	for(int i = 0; i < size; i++)
 		fct(array[i]);
 }
 
-template<typename T>
-void	display(T & elem)
+template< typename T >
+void	display(T const & elem)
 {
 	std::cout << elem << std::endl;
 }

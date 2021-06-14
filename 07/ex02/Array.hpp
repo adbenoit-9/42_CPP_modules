@@ -37,7 +37,7 @@ class Array
 template<class T>
 Array<T>::Array(void)
 {
-	this->_array = new T[0];
+	this->_array = new T;
 	this->_size = 0;
 }
 
@@ -75,7 +75,7 @@ template<class T>
 T &				Array<T>::operator [] (unsigned int i)
 {
 	if (i >= this->_size)
-		throw std::overflow_error("Overflow");
+		throw std::exception();
 	return (this->_array[i]);
 }
 

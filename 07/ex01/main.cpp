@@ -12,20 +12,17 @@
 
 #include "iter.hpp"
 
-void	display_char(char & elem)
-{
-	std::cout << elem << std::endl;
-}
-
 int main(void)
 {
 	char str[4] = {'t', 'e', 's', 't'};
 	std::cout << "Array : test" << std::endl;
-	iter<char, void(char &)>( str, 4 , display );
+	iter(str, 4 , display);
 
-	int array[4] = {1, 2, 3, 4};
+	std::cout << std::endl;
+
+	int tab[] = {0, 1, 2, 3, 4};
 	std::cout << "Array : 1234" << std::endl;
-	iter<int, void(int &)>( array, 4 , display );
+	iter(tab, 5, display);
 
 	return 0;
 }
