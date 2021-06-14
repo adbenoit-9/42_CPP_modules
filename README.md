@@ -1,1 +1,1 @@
-# 42_CPP_Modules
+# CPP Modules (@42Paris)
