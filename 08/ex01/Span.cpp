@@ -6,11 +6,11 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:49:45 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/02 14:44:23 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/16 16:41:01 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "span.hpp"
+#include "Span.hpp"
 
 Span::Span(unsigned int n) : _n(n), _i(0)
 {
