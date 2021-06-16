@@ -18,15 +18,18 @@
 class Span
 {
 	private:
-		unsigned int	_n;
+		unsigned int	_N;
 		unsigned int	_i;
 		int				*_tab;
 
 	public:
 		Span(unsigned int n);
-		// Span(const Span &toCopy);
+		Span(const Span &toCopy);
 		~Span(void);
-		// Span	&operator = (const Span &toCopy);
+		Span	&operator = (const Span &toCopy);
+		unsigned int	getN(void) const;
+		unsigned int	getI(void) const;
+		int				*getTab(void) const;
 		void	addNumber(int n);
 		int		shortestSpan(void);
 		int		longestSpan(void);

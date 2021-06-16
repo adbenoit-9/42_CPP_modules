@@ -12,30 +12,54 @@
 
 #include "Span.hpp"
 
-Span::Span(unsigned int n) : _n(n), _i(0)
+Span::Span(unsigned int n) : _N(n), _i(0)
 {
 	this->_tab = new int[n];
 }
 
-// Span::Span(const Span &toCopy)
-// {
-// 	this->_tab = new int[n];
-// }
+Span::Span(const Span &toCopy)
+{
+	this->_N = toCopy.getN();
+	this->_i = toCopy.getI();
+	this->_tab = new int[this->_N];
+	for (int i = 0; i < this->_i; i++)
+		this->_tab[i] = toCopy.getTab()[i];
+}
 
 Span::~Span(void)
 {
-	delete[] _tab;
+	delete[] this->_tab;
 }
 
-// Span	&Span::operator = (const Span &toCopy)
-// {
+Span	&Span::operator = (const Span &toCopy)
+{
+	this->_N = toCopy.getN();
+	this->_i = toCopy.getI();
+	delete[] this->_tab;
+	this->_tab = new int[this->_N];
+	for (int i = 0; i < this->_i; i++)
+		this->_tab[i] = toCopy.getTab()[i];
+	return (*this);
+}
 
-// 	return (*this);
-// }
+unsigned int	Span::getN(void) const
+{
+	return (this->_N);
+}
+
+unsigned int	Span::getI(void) const
+{
+	return (this->_i);
+}
+
+int				*Span::getTab(void) const
+{
+	return (this->_tab);
+}
 
 void	Span::addNumber(int n)
 {
-	if (this->_i == this->_n)
+	if (this->_i == this->_N)
 		throw std::exception();
 	this->_tab[this->_i] = n;
 	++this->_i;
