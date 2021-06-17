@@ -16,7 +16,7 @@ void	* serialize(void)
 {
 	char	*raw = new char[20];
 
-	std::string str = "-Hello- ";
+	std::string str = "-Hello-\0";
 	for (int i = 0; i < 8; i++)
 		*raw++ = str[i];
 
@@ -25,12 +25,11 @@ void	* serialize(void)
 	*(reinterpret_cast<int*>(raw)) = n;
 	raw += sizeof(int);
 
-
-	str = " -World-";
+	str = "-World-\0";
 	for (int i = 0; i < 8; i++)
 		*raw++ = str[i];
 
-	raw -= 20;
+	raw -= (16 + sizeof(int));
 
 	return ((void *)raw);
 }
@@ -38,17 +37,22 @@ void	* serialize(void)
 Data	* deserialize(void * raw)
 {
 	Data * data = new Data;
-	char * ptr = static_cast<char*>(raw);
+	char * ptr = reinterpret_cast<char*>(raw);
 
 	for (int i = 0; i < 8; i++)
+	{
+		std::cout << "|" << *ptr << "|";
 		data->s1[i] = *ptr++;
-	data->s1 = &data->s1[0];
+		std::cout << "|" << data->s1[i] << "|";
+	}
+	// data->s1 = &data->s1[0];
 
+	std::cout << data->s1 << std::endl;
 	data->n = *(reinterpret_cast<int*>(ptr));
 	ptr += sizeof(int);
 
 	for (int i = 0; i < 8; i++)
 		data->s2[i] = *ptr++;
-	data->s2 = &data->s2[0];
+	// data->s2 = &data->s2[0];
 	return (data);
 }

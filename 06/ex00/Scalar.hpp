@@ -18,6 +18,7 @@
 #include <string>
 #include <fstream>
 #include <cmath>
+#include <math.h>
 #include <exception>
 
 class Scalar
