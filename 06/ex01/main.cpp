@@ -31,5 +31,6 @@ int	main()
 	std::cout << "n : " << data->n << std::endl;
 	std::cout << "s2 : \"" << data->s2 << "\"" << std::endl;
 
+	delete data;
 	return (0);
 }

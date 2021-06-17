@@ -19,11 +19,9 @@
 
 typedef struct	s_data
 {
-	// std::string	s1;
-	char		s1[8];
+	std::string	s1;
 	int			n;
-	// std::string	s2;
-	char		s2[8];
+	std::string	s2;
 }				Data;
 
 void	* serialize(void);

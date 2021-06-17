@@ -39,6 +39,7 @@ Data	* deserialize(void * raw)
 	Data * data = new Data;
 	char * ptr = reinterpret_cast<char*>(raw);
 
+	//resize string
 	for (int i = 0; i < 8; i++)
 	{
 		std::cout << "|" << *ptr << "|";
