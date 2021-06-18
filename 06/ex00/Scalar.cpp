@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:13:22 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/15 15:08:29 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:47:18 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ Scalar::Scalar(std::string str)
 {
     if (str.length() == 1 && (str[0] < '0' || str[0] > '9'))
     {
-        this->_float = str[0];
-        this->_double = str[0];
-        this->_int = str[0];
+        this->_float = static_cast<float>(str[0]);
+        this->_double = static_cast<double>(str[0]);
+        this->_int = static_cast<int>(str[0]);
         this->_char = str[0];
     }
     else
     {
 	    this->_float = std::stof(str);
         this->_double = std::stod(str);
-        this->_int = this->_double + 0.5;
-        this->_char = this->_int;
+        this->_int = static_cast<int>(this->_double + 0.5);
+        this->_char = static_cast<char>(this->_int);
     }
 }
 
@@ -72,7 +72,7 @@ double        Scalar::getDouble(void) const
 
 std::ostream&	operator << (std::ostream& os, const Scalar & scalar)
 {
-    if (scalar.getChar() >= 32 && scalar.getChar() <= 127)
+    if (scalar.getInt() >= 32 && scalar.getInt() <= 127)
         std::cout << "char: '" << scalar.getChar() << "'" << std::endl;
     else if (isnan(scalar.getFloat()))
         std::cout << "char: impossible" << std::endl;
