@@ -37,23 +37,19 @@ void	* serialize(void)
 Data	* deserialize(void * raw)
 {
 	Data * data = new Data;
-	char * ptr = reinterpret_cast<char*>(raw);
+	char * ptr = static_cast<char*>(raw);
 
-	//resize string
+	data->s1.resize(8);
+	data->s2.resize(8);
+
 	for (int i = 0; i < 8; i++)
-	{
-		std::cout << "|" << *ptr << "|";
 		data->s1[i] = *ptr++;
-		std::cout << "|" << data->s1[i] << "|";
-	}
-	// data->s1 = &data->s1[0];
 
-	std::cout << data->s1 << std::endl;
 	data->n = *(reinterpret_cast<int*>(ptr));
 	ptr += sizeof(int);
 
 	for (int i = 0; i < 8; i++)
 		data->s2[i] = *ptr++;
-	// data->s2 = &data->s2[0];
+
 	return (data);
 }

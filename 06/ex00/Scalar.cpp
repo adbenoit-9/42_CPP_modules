@@ -14,7 +14,7 @@
 
 Scalar::Scalar(std::string str)
 {
-    if (str.length() == 1 && str[0] < '0' && str[0] > '9')
+    if (str.length() == 1 && (str[0] < '0' || str[0] > '9'))
     {
         this->_float = str[0];
         this->_double = str[0];
@@ -37,11 +37,6 @@ Scalar::Scalar(const Scalar& toCopy)
 
 Scalar::~Scalar(void) {}
 
-char        Scalar::getChar(void) const
-{
-    return (this->_char);
-}
-
 Scalar&	Scalar::operator = (const Scalar& toCopy)
 {
     if (this == &toCopy)
@@ -55,6 +50,10 @@ Scalar&	Scalar::operator = (const Scalar& toCopy)
     return (*this);
 }
 
+char        Scalar::getChar(void) const
+{
+    return (this->_char);
+}
 
 int        Scalar::getInt(void) const
 {

@@ -39,20 +39,9 @@ static bool  isNumber(std::string str)
     return (1);  
 }
 
-static bool	parsing(std::string str, int n)
-{
-	if (n != 2)
-		return (1);
-	if (str.length() == 1 && (str[0] < 32 || str[0] > 127))
-		return (1);
-	if (isNumber(str) == 0)
-		return (1);
-	return (0);
-}
-
 int 		main(int ac, char **av)
 {
-	if (parsing(av[1], ac) == 1)
+	if (ac != 2 || (av[1][0] && av[1][1] && isNumber(av[1]) == 0) || !av[1][0])
 	{
 		std::cout << "Wrong scalar type" << std::endl;
 		return (1);

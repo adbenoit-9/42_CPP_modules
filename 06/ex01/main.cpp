@@ -20,9 +20,9 @@ int	main()
 	srand(time(NULL));
 
 	std::cout << "\033[1m---- Serialize ----\033[0m" << std::endl;
-	std::cout << "s1 : \"-Hello- \"" << std::endl;
+	std::cout << "s1 : \"-Hello-\"" << std::endl;
 	raw = serialize();
-	std::cout << "s2 : \" -World-\"" << std::endl;
+	std::cout << "s2 : \"-World-\"" << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "\033[1m---- Deserialize ----\033[0m" << std::endl;
@@ -32,5 +32,7 @@ int	main()
 	std::cout << "s2 : \"" << data->s2 << "\"" << std::endl;
 
 	delete data;
+	delete[] reinterpret_cast<char*>(raw);
+
 	return (0);
 }

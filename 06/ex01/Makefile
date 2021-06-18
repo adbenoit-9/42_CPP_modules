@@ -12,7 +12,7 @@
 
 NAME	=	serialize
 CC		=	clang++
-FLAG	=	-g -fsanitize=address -Wall -Wextra -Werror -std=c++98
+FLAG	=	-Wall -Wextra -Werror -std=c++98
 
 SRC		=	Serialize.cpp main.cpp
 OBJ		=	$(SRC:.cpp=.o)
