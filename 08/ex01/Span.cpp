@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:49:45 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/23 21:50:06 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 21:53:15 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		Span::longestSpan(void)
 		throw std::exception();
 
 	std::vector<int>	sortTab(this->_tab);
-
 	std::sort(sortTab.begin(), sortTab.end());
+
 	return (sortTab.back() - sortTab.front());
 }
