@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:52:38 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/23 16:22:51 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 21:31:08 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,18 @@
 class Span
 {
 	private:
-		Span(void);
 		unsigned int		_N;
-		unsigned int		_i;
-		std::vector<int>	*_tab;
+		std::vector<int>	_tab;
 
 	public:
+		Span(void);
 		Span(unsigned int n);
 		Span(const Span &toCopy);
 		~Span(void);
 		Span			&operator = (const Span &toCopy);
-		unsigned int	getN(void) const;
-		unsigned int	getI(void) const;
-		int				*getTab(void) const;
 		void			addNumber(int n);
+		void			addNumbers(const std::vector<int>::iterator & first,
+						const std::vector<int>::iterator & last);
 		int				shortestSpan(void);
 		int				longestSpan(void);
 };

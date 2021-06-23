@@ -6,107 +6,77 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:49:45 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/23 16:23:16 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 21:39:23 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(unsigned int n) : _N(n)//, _i(0)
-{
-	// this->_tab = new int[n];
-}
+Span::Span(void) : _N(0) {}
+
+Span::Span(unsigned int n) : _N(n) {}
 
 Span::Span(const Span &toCopy)
 {
-	this->_N = toCopy.getN();
-	this->_i = toCopy.getI();
-	this->_tab = new int[this->_N];
-	for (int i = 0; i < this->_i; i++)
-		this->_tab[i] = toCopy.getTab()[i];
+	*this = toCopy;
 }
 
 Span::~Span(void)
 {
-	delete[] this->_tab;
+	this->_tab.clear();
 }
 
 Span	&Span::operator = (const Span &toCopy)
 {
-	this->_N = toCopy.getN();
-	this->_i = toCopy.getI();
-	delete[] this->_tab;
-	this->_tab = new int[this->_N];
-	for (int i = 0; i < this->_i; i++)
-		this->_tab[i] = toCopy.getTab()[i];
+	if (this == &toCopy)
+		return (*this);
+	this->_N = toCopy._N;
+	this->_tab = toCopy._tab;
 	return (*this);
-}
-
-unsigned int	Span::getN(void) const
-{
-	return (this->_N);
-}
-
-unsigned int	Span::getI(void) const
-{
-	return (this->_i);
-}
-
-int				*Span::getTab(void) const
-{
-	return (this->_tab);
 }
 
 void	Span::addNumber(int n)
 {
-	if (this->_i == this->_N)
+	if (this->_tab.size() == this->_N)
 		throw std::exception();
-	this->_tab[this->_i] = n;
-	++this->_i;
+	this->_tab.push_back(n);
 }
 
-int		abs(int n)
+void	Span::addNumbers(std::vector<int>::iterator const &first,
+		std::vector<int>::iterator const &last)
 {
-	if (n < 0)
-		return (-n);
-	return (n);
+	for (std::vector<int>::iterator it = first; it < last; it++)
+	{
+		if (this->_tab.size() >= this->_N)
+			throw std::exception();
+		else
+			this->_tab.push_back(*it);
+	}
 }
+
 int		Span::shortestSpan(void)
 {
-	int	shortest;
-
-	if (this->_i <= 1)
+	if (this->_tab.size() < 2)
 		throw std::exception();
-	shortest = abs(this->_tab[0] - this->_tab[1]);
-	for (int i = 0; i < this->_i; i++)
-	{
-		for (int j = 0; j < this->_i; j++)
-		{
-			if (i != j && shortest > abs(this->_tab[i] - this->_tab[j]))
-				shortest = abs(this->_tab[i] - this->_tab[j]);
-		}
-	}
+
+	std::vector<int>	sortTab(this->_tab);
+	std::sort(sortTab.begin(), sortTab.end());
+
+	int shortest = sortTab[1] - sortTab[0];
+	for (int i = 1; i < sortTab.size() - 1; i++)
+		if (shortest > sortTab[i + 1] - sortTab[i])
+			shortest = sortTab[i + 1] - sortTab[i];
+
 	return (shortest);
 }
 
 int		Span::longestSpan(void)
 {
-	int	upper;
-	int	lower;
-
-	if (this->_i <= 1)
+	if (this->_tab.size() < 2)
 		throw std::exception();
-	lower = this->_tab[0];
-	for (int i = 1; i < this->_i; i++)
-	{
-		if (this->_tab[i] < lower)
-			lower = this->_tab[i];
-	}
-	upper = this->_tab[0];
-	for (int i = 1; i < this->_i; i++)
-	{
-		if (this->_tab[i] > upper)
-			upper = this->_tab[i];
-	}
-	return (upper - lower);
+
+	std::vector<int>	sortTab(this->_tab);
+
+	std::sort(sortTab.begin(), sortTab.end());
+	return (sortTab.back() - sortTab.front());
 }
