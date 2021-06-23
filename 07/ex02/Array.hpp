@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:00:29 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/31 19:45:20 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 16:09:05 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ template<class T>
 Array<T> &		Array<T>::operator = (Array<T> const & toCopy) 
 {
 	this->_size = toCopy.size();
+	delete[] this->_array;
 	this->_array = new T[this->_size];
 	for(unsigned int i = 0; i < this->_size; i++)
 		this->_array[i] = toCopy._array[i];

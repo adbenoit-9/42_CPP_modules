@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:49:45 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/16 16:41:01 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 16:23:16 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(unsigned int n) : _N(n), _i(0)
+Span::Span(unsigned int n) : _N(n)//, _i(0)
 {
-	this->_tab = new int[n];
+	// this->_tab = new int[n];
 }
 
 Span::Span(const Span &toCopy)
