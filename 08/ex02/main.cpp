@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 14:52:30 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/16 19:10:51 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 22:08:44 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 void	ft_list(void)
 {	
-	std::list lst;
+	std::list<int> lst;
 
-	lst.push(5);
-	lst.push(17);
+	lst.push_back(5);
+	lst.push_back(17);
 
-	std::cout << lst.top() << std::endl;
+	std::cout << lst.back() << std::endl;
 
-	lst.pop();
+	lst.pop_back();
 
 	std::cout << lst.size() << std::endl;
 
-	lst.push(3);
-	lst.push(5);
-	lst.push(737);
-	lst.push(0);
+	lst.push_back(3);
+	lst.push_back(5);
+	lst.push_back(737);
+	lst.push_back(0);
 
-	MutantStack<int>::iterator it = lst.begin();
-	MutantStack<int>::iterator ite = lst.end();
+	std::list<int>::iterator it = lst.begin();
+	std::list<int>::iterator ite = lst.end();
 	
 	++it;
 	--it;
@@ -83,5 +83,15 @@ int main(void)
 	MutantStack<int> msCopy;
 	msCopy = ms;
 	
+	it = msCopy.begin();
+	ite = msCopy.end();
+	
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
 	return 0;
 }

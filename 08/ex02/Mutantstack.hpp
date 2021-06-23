@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 14:53:15 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/16 19:01:18 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 21:56:50 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,20 @@ MutantStack<T>::~MutantStack(void) {}
 template<class T>
 MutantStack<T>& MutantStack<T>::operator = (const MutantStack<T> &toCopy)
 {
-    this->std::stack<T>::operator=(toCopy);
+    this->c = toCopy.c;
     return (*this);
 }
 
 template<class T>
 typename MutantStack<T>::iterator	MutantStack<T>::begin(void)
 {
-	return(std::stack<T>::c.begin());
+	return(this->c.begin());
 }
 
 template<class T>
 typename MutantStack<T>::iterator	MutantStack<T>::end(void)
 {
-	return(std::stack<T>::c.end());
+	return(this->c.end());
 }
 
 #endif
