@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 15:41:15 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/05/31 17:55:50 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:31:51 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 	std::cout << std::endl;
 
 	int tab[] = {0, 1, 2, 3, 4};
-	std::cout << "Array : 1234" << std::endl;
+	std::cout << "Array : 01234" << std::endl;
 	iter(tab, 5, display);
 
 	return 0;

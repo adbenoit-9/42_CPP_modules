@@ -6,13 +6,13 @@
 #    By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/03 11:21:34 by adbenoit          #+#    #+#              #
-#    Updated: 2021/05/31 19:12:26 by adbenoit         ###   ########.fr        #
+#    Updated: 2021/06/23 14:37:46 by adbenoit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	array
 CC		=	clang++
-FLAG	=	-Wall -Wextra -Werror -std=c++98
+FLAG	=	-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 SRC		=	main.cpp
 OBJ		=	$(SRC:.cpp=.o)
