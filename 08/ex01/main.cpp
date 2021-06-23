@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:30:57 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/23 21:41:42 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 21:50:29 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main()
 		sp.addNumber(-4);
 		for (int i = 1; i < 10000; i++)
 			v.push_back(i);
-		sp.addNumbers(v.begin(), v.end());
+		sp.addRange(v.begin(), v.end());
 		v.clear();
 		std::cout << "shortest span : " << sp.shortestSpan() << std::endl;
 		std::cout << "longest span : " << sp.longestSpan() << std::endl;

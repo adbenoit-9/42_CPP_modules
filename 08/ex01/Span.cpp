@@ -6,7 +6,7 @@
 /*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 12:49:45 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/06/23 21:39:23 by adbenoit         ###   ########.fr       */
+/*   Updated: 2021/06/23 21:50:06 by adbenoit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,11 @@ void	Span::addNumber(int n)
 	this->_tab.push_back(n);
 }
 
-void	Span::addNumbers(std::vector<int>::iterator const &first,
+void	Span::addRange(std::vector<int>::iterator const &first,
 		std::vector<int>::iterator const &last)
 {
 	for (std::vector<int>::iterator it = first; it < last; it++)
-	{
-		if (this->_tab.size() >= this->_N)
-			throw std::exception();
-		else
-			this->_tab.push_back(*it);
-	}
+		this->addNumber(*it);
 }
 
 int		Span::shortestSpan(void)
