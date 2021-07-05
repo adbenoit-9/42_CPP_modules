@@ -1,2 +1,2 @@
 # CPP Modules (@42Paris)
-Learn C++
+Learn fundamentals of C++
