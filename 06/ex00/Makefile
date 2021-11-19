@@ -12,7 +12,7 @@
 
 NAME	=	convert
 CC		=	clang++
-FLAG	=	-Wall -Wextra -Werror -std=c++98
+FLAG	=	-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 SRC		=	Scalar.cpp main.cpp
 OBJ		=	$(SRC:.cpp=.o)

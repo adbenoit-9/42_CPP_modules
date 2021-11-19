@@ -25,7 +25,8 @@ Scalar::Scalar(std::string str)
     {
 	    this->_float = std::stof(str);
         this->_double = std::stod(str);
-        this->_int = static_cast<int>(this->_double + 0.5);
+        this->_int = this->_double > 0 ? static_cast<int>(this->_double + 0.5)
+                        : static_cast<int>(this->_double - 0.5) ;
         this->_char = static_cast<char>(this->_int);
     }
 }

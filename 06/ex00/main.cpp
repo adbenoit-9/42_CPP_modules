@@ -12,31 +12,29 @@
 
 #include "Scalar.hpp"
 
-static bool  isNumber(std::string str)
+static bool  isNumber(const std::string& str)
 {
-    if (!str.compare("inf") || !str.compare("-inf") || !str.compare("nan")
-    || !str.compare("-inff") || !str.compare("inff") || !str.compare("nanf"))
-        return (1);
+    if (str == "inf" || str == "-inf" || str == "nan" || str == "-inf"
+        || str == "inff" || str == "nanf")
+        return true;
 
+    size_t i;
     int point = 0;
 
-    for (int i = 0; str[i]; i++)
+    i = str[0] == '-' ? 1 : 0;
+    for (; i < str.size(); i++)
     {
         if (!isdigit(str[i]))
         {
-            if (str[i] == '-' && i == 0)
-                ;
-            else if (str[i] == 'f' && !str[i + 1])
-                return (1);
-            else if (str[i] == '.')
-                ++point;
-            else
-                return (0);
+            if (str[i] == 'f' && i == str.size() - 1)
+                return true;
+            else if (str[i] == '.' && ++point > 1)
+                return false;
+            else if (str[i] != '.')
+                return false;
         }
     }
-    if (point > 1)
-        return (0);
-    return (1);  
+    return true;  
 }
 
 int 		main(int ac, char **av)
@@ -44,7 +42,7 @@ int 		main(int ac, char **av)
 	if (ac != 2 || (av[1][0] && av[1][1] && isNumber(av[1]) == 0) || !av[1][0])
 	{
 		std::cout << "Wrong scalar type" << std::endl;
-		return (1);
+		return 1;
 	}
 
 	try
@@ -56,5 +54,5 @@ int 		main(int ac, char **av)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	return (0);
+	return 0;
 }
