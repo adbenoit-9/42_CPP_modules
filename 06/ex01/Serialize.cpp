@@ -31,7 +31,7 @@ void	* serialize(void)
 
 	raw -= (16 + sizeof(int));
 
-	return ((void *)raw);
+	return (void *)raw;
 }
 
 Data	* deserialize(void * raw)
@@ -51,5 +51,5 @@ Data	* deserialize(void * raw)
 	for (int i = 0; i < 8; i++)
 		data->s2[i] = *ptr++;
 
-	return (data);
+	return data;
 }

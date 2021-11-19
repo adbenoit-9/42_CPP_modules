@@ -21,5 +21,6 @@ int	main()
 	identify_from_pointer(p);
 	std::cout << "Identify type from reference : ";
 	identify_from_reference(*p);
-	return (0);
+	
+	return 0;
 }

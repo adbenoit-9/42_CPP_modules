@@ -34,5 +34,5 @@ int	main()
 	delete data;
 	delete[] reinterpret_cast<char*>(raw);
 
-	return (0);
+	return 0;
 }
