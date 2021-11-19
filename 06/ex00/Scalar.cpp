@@ -14,7 +14,7 @@
 
 Scalar::Scalar(std::string str)
 {
-    if (str.length() == 1 && (str[0] < '0' || str[0] > '9'))
+    if (str.length() == 1 && !isdigit(str[0]))
     {
         this->_float = static_cast<float>(str[0]);
         this->_double = static_cast<double>(str[0]);
@@ -41,34 +41,34 @@ Scalar::~Scalar(void) {}
 Scalar&	Scalar::operator = (const Scalar& toCopy)
 {
     if (this == &toCopy)
-        return (*this);
+        return *this;
 
     this->_char = toCopy.getChar();
     this->_double = toCopy.getDouble();
     this->_float = toCopy.getFloat();
     this->_int = toCopy.getInt();
 
-    return (*this);
+    return *this;
 }
 
 char        Scalar::getChar(void) const
 {
-    return (this->_char);
+    return this->_char;
 }
 
 int        Scalar::getInt(void) const
 {
-    return (this->_int);
+    return this->_int;
 }
 
 float        Scalar::getFloat(void) const
 {
-    return (this->_float);
+    return this->_float;
 }
 
 double        Scalar::getDouble(void) const
 {
-    return (this->_double);
+    return this->_double;
 }
 
 std::ostream&	operator << (std::ostream& os, const Scalar & scalar)
@@ -88,5 +88,6 @@ std::ostream&	operator << (std::ostream& os, const Scalar & scalar)
     std::cout << std::fixed << std::setprecision(1);
     std::cout << "float: " << scalar.getFloat() << "f" << std::endl;
     std::cout << "double: " << scalar.getDouble() << std::endl;
-    return (os);
+
+    return os;
 }
